@@ -1,60 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231: Web Frontend Development I - Home Page</title>
-    <meta name="description" content="Course home page for WDD 231 focusing on web development projects, dynamic course lists, and assignments.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <title>Chamber of Commerce - Site Plan</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Site plan and project specifications for the Chamber of Commerce web frontend project." />
+    <link rel="stylesheet" href="styles/site-plan.css" /> <!-- Tu hoja de estilos exclusiva del plan -->
 </head>
 <body>
+
     <header>
-        <h1>Jeimi Díaz Mariani</h1>
-        <p>WDD 231: Web Frontend Development I</p>
+        <h1>Chamber of Commerce Site Plan</h1>
+        <h2>Project Specifications & Planning Blueprint</h2>
+        <p>Prepared by: Jeimi Díaz Mariani</p>
     </header>
 
-    <nav>
-        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
-        <ul id="nav-menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="chamber/index.html">Chamber of Commerce</a></li>
-            <li><a href="https://github.com/" target="_blank">GitHub Repository</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <div class="grid-container">
-            <section class="card-section">
-                <h2>Course Certificate Requirements</h2>
-                <div class="filter-buttons">
-                    <button id="filter-all" class="btn active">All</button>
-                    <button id="filter-wdd" class="btn">WDD</button>
-                    <button id="filter-cse" class="btn">CSE</button>
-                </div>
-                <div id="course-container"></div>
-                <div class="credit-total">
-                    <p>Total Credits Required: <span id="total-credits">0</span></p>
-                </div>
-            </section>
+        <!-- 1. Propósito y Audiencia (Core del Site Plan) -->
+        <section>
+            <h2>1. Site Purpose & Target Audience</h2>
+            <p><strong>Site Purpose:</strong> To provide a centralized digital hub that promotes economic growth, empowers local businesses, and connects the community with vital resources, weather insights, and commerce opportunities.</p>
+            <p><strong>Target Audience:</strong> Local business owners looking for growth and networking, entrepreneurs seeking organizational support, residents interested in community events, and visitors looking to discover the region.</p>
+        </section>
 
-            <section class="card-section">
-                <h2>Chamber Project</h2>
-                <p><strong>Target Location:</strong> Cabimas, Zulia, Venezuela</p>
-                <p>The Chamber of Commerce project focuses on building a responsive and accessible platform to support local businesses, foster networking, and encourage community development.</p>
-                <p><a href="chamber/index.html" class="project-link">View Chamber Site</a></p>
-            </section>
-        </div>
+        <hr />
+
+        <!-- 2. Especificaciones Generales de Diseño -->
+        <section>
+            <h2>2. General Design Specifications</h2>
+            <ul>
+                <li><strong>Validity & Semantics:</strong> The entire site will be built using modern, valid, and contemporary semantic HTML5 structural elements, clean layout-driven CSS3, and modern modular JavaScript.</li>
+                <li><strong>Consistency & UX:</strong> Navigation systems, headers, and footers will remain uniform across all pages to guarantee intuitive ease of navigation and a positive user experience.</li>
+                <li><strong>Responsiveness:</strong> A mobile-first design strategy ensures fluid adaptability for mobile, tablet, and widescreen desktop clients.</li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <!-- 3. Mapa del Sitio (Basado en image_a35c22.png) -->
+        <section>
+            <h2>3. Site Map Architecture</h2>
+            <p>As structured in <strong>image_a35c22.png</strong>, the core hierarchy of the site maps directly to the following structure:</p>
+            <ul>
+                <li><strong>Home</strong> (Main landing hub)</li>
+                <li><strong>Discover</strong> (Community info & media showcase)</li>
+                <li><strong>Business Directory</strong> (Organization & business lists)</li>
+                <li><strong>Join</strong> (Membership benefits & validation application)</li>
+                <li><del>About</del> <small>(Planned/Secondary)</small></li>
+                <li><del>Podcast</del> <small>(Planned/Secondary)</small></li>
+                <li><del>Events</del> <small>(Planned/Secondary)</small></li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <!-- 4. Especificaciones Detalladas de las Páginas Obligatorias -->
+        <section>
+            <h2>4. Required Page Specifications</h2>
+            
+            <h3>📄 Home Page</h3>
+            <p>Will feature attention-grabbing introductory information, an interactive community brief, localized real-time weather updates, clear calls to action (CTA) for enrollment, and highlighted business spotlight zones.</p>
+
+            <h3>📄 Discover Page</h3>
+            <p>Dedicated to regional locale history, current demographic statistics, and active community events. It will incorporate a responsive image montage to visually orient visitors and showcase interesting key landmarks.</p>
+
+            <h3>📄 Directory Page</h3>
+            <p>Will house the complete list of local businesses and organizations that belong to the chamber, structured to toggle smoothly between card/grid and list views.</p>
+
+            <h3>📄 Join Page</h3>
+            <p>Will details the corporate and individual benefits of joining the chamber. It will host a dynamic membership application form outlining three distinct subscription tiers:</p>
+            <ul>
+                <li><strong>Non-Profit:</strong> Standard listings, basic community board access, and essential trainings.</li>
+                <li><strong>Silver:</strong> Enhanced directory indexing, dedicated social media work/spotlights, and monthly luncheon entry.</li>
+                <li><strong>Gold:</strong> Premium spotlight positioning, display advertising, full event sponsorships, and advanced publication perks.</li>
+            </ul>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> | Jeimi Díaz Mariani | Venezuela</p>
-        <p id="last-modified"></p>
+        <p>&copy; 2026 | Chamber Site Plan | Frontend Architecture Documentation</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
 </body>
 </html>
