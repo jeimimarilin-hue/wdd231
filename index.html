@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <title>Cabimas Chamber of Commerce - Discover</title>
+    <title>Cabimas Chamber of Commerce - Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Discover our local community: its rich history, industrial demographics, landmarks, and current events." />
+    <meta name="description" content="Welcome to the Cabimas Chamber of Commerce. Connecting businesses, tracking community weather, and fostering regional economic growth." />
     <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
-<body dir="ltr">
+<body>
 
     <header>
-        <h1>Cabimas Chamber of Commerce</h1>
-        <p class="tagline">Explore and Connect</p>
+        <div class="logo-area">
+            <img src="images/logo.png" alt="Official logo of Cabimas Chamber of Commerce" width="80" height="80">
+            <h1>Cabimas Chamber of Commerce</h1>
+        </div>
+        <p class="tagline">Empowering local businesses and community growth.</p>
     </header>
 
     <nav aria-label="Primary Navigation">
-        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <button id="menu-toggle" aria-label="Open primary navigation menu">&#9776;</button>
         <ul id="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
         </ul>
     </nav>
 
-    <main class="discover-layout">
-        <aside class="stats-sidebar">
-            <section class="info-block">
-                <h3>Locale History</h3>
-                <p>Founded as a strategic hub, our community has grown from an industrial core into an adaptive, multi-sector economic powerhouse.</p>
-            </section>
-            <section class="info-block">
-                <h3>Current Demographics</h3>
-                <p>A thriving population characterized by an educated workforce, specialized technical expertise, and an emerging entrepreneur market.</p>
-            </section>
-            <section class="info-block">
-                <h3>Current Events</h3>
-                <p>Join us this Saturday for our upcoming Educational Series and Local Corporate Strategy summits.</p>
-            </section>
-        </aside>
+    <main class="home-grid">
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h2>Shape the Future of Our Economy</h2>
+                <p>Join a network of dedicated professionals driving local commerce forward.</p>
+                <a href="join.html" class="cta-button" aria-label="Apply for Chamber Membership">Apply for Membership</a>
+            </div>
+        </section>
 
-        <section class="image-montage">
-            <h3>Visual Tour & Landmarks</h3>
-            <div class="gallery-grid">
-                <figure>
-                    <img src="images/business.jpg" alt="Industrial Hub Overview" loading="lazy">
-                    <figcaption>Regional Business Infrastructure</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/business1.jpg" alt="Cultural Center District" loading="lazy">
-                    <figcaption>Historic Plaza & Gathering Spaces</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/business2.jpg" alt="Commercial Sector Exchange" loading="lazy">
-                    <figcaption>Downtown Retail & Corporate Trade Zone</figcaption>
-                </figure>
+        <section class="community-info">
+            <h3>Community Insights</h3>
+            <p>Stay updated with our latest local corporate events, infrastructure milestones, and economic forums.</p>
+            
+            <div class="weather-card">
+                <h4>Current Weather</h4>
+                <div id="weather-data">
+                    <p>Temperature: <span id="temp">--</span>°C</p>
+                    <p>Condition: <span id="condition">Loading...</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-spotlights">
+            <h3>Business Spotlights</h3>
+            <div class="spotlight-container">
+                <article class="spotlight-card gold-member">
+                    <h4>Premium Member Corp</h4>
+                    <p>Leading logistics and retail solutions across the municipality.</p>
+                </article>
+                <article class="spotlight-card silver-member">
+                    <h4>Local Growth Ventures</h4>
+                    <p>Innovative technology and development consulting experts.</p>
+                </article>
             </div>
         </section>
     </main>
