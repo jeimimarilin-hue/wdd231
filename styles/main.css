@@ -146,6 +146,48 @@ main {
 .gold-member { border-top-color: var(--gold); }
 .silver-member { border-top-color: var(--silver); }
 
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gallery-item img {
+        height: 220px;
+    }
+}
+
 footer {
     background-color: var(--text-color);
     color: var(--white);
