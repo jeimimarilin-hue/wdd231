@@ -96,7 +96,7 @@ main {
     margin: 0 auto;
 }
 
-.home-grid {
+.home-grid, .discover-layout, .join-layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -123,7 +123,7 @@ main {
     min-height: 44px;
 }
 
-.weather-card, .member-card {
+.weather-card, .info-block, .perk-tier, .member-card {
     background-color: var(--light-bg);
     padding: 1rem;
     border-radius: 6px;
@@ -178,14 +178,68 @@ main {
     color: var(--text-color);
 }
 
-@media (min-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .gallery-item img {
-        height: 220px;
-    }
+.view-toggle-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.view-toggle-controls button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background: var(--white);
+}
+
+.view-toggle-controls button.active-btn {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.list-layout .member-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.validated-form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.validated-form input[type="text"],
+.validated-form input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.validated-form fieldset {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 footer {
@@ -222,5 +276,21 @@ footer {
 
     .spotlight-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .discover-layout {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+    .join-layout {
+        grid-template-columns: 3fr 2fr;
     }
 }
