@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Web Frontend Development I</title>
+    <title>WDD 231: Web Frontend Development I - Home Page</title>
+    <meta name="description" content="Course home page for WDD 231 focusing on web development projects and course assignments.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <h1>Welcome to my WDD 231 Repository</h1>
-    <p>This site is under construction. :D</p>
+    <header>
+        <h1>Jeimi Díaz Mariani</h1>
+        <p>WDD 231: Web Frontend Development I</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber/index.html">Chamber of Commerce</a>
+        <a href="https://github.com/" target="_blank">GitHub Repository</a>
+    </nav>
+
+    <main>
+        <div class="grid-container">
+            <section class="card-section">
+                <h2>Course Assignments</h2>
+                <ul>
+                    <li>Week 01: Course Home Page Introduction</li>
+                    <li>Week 02: Chamber Site Plan</li>
+                </ul>
+            </section>
+
+            <section class="card-section">
+                <h2>Chamber Project</h2>
+                <p><strong>Target Location:</strong> Cabimas, Zulia, Venezuela</p>
+                <p>The Chamber of Commerce project focuses on building a responsive and accessible platform to support local businesses, foster networking, and encourage community development.</p>
+                <p><a href="chamber/index.html">View Chamber Site</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> | Jeimi Díaz Mariani | Venezuela</p>
+        <p id="last-modified"></p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
