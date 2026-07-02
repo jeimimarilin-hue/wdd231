@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 231: Web Frontend Development I - Home Page</title>
-    <meta name="description" content="Course home page for WDD 231 focusing on web development projects and course assignments.">
+    <meta name="description" content="Course home page for WDD 231 focusing on web development projects, dynamic course lists, and assignments.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,26 +18,34 @@
     </header>
 
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="chamber/index.html">Chamber of Commerce</a>
-        <a href="https://github.com/" target="_blank">GitHub Repository</a>
+        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="chamber/index.html">Chamber of Commerce</a></li>
+            <li><a href="https://github.com/" target="_blank">GitHub Repository</a></li>
+        </ul>
     </nav>
 
     <main>
         <div class="grid-container">
             <section class="card-section">
-                <h2>Course Assignments</h2>
-                <ul>
-                    <li>Week 01: Course Home Page Introduction</li>
-                    <li>Week 02: Chamber Site Plan</li>
-                </ul>
+                <h2>Course Certificate Requirements</h2>
+                <div class="filter-buttons">
+                    <button id="filter-all" class="btn active">All</button>
+                    <button id="filter-wdd" class="btn">WDD</button>
+                    <button id="filter-cse" class="btn">CSE</button>
+                </div>
+                <div id="course-container"></div>
+                <div class="credit-total">
+                    <p>Total Credits Required: <span id="total-credits">0</span></p>
+                </div>
             </section>
 
             <section class="card-section">
                 <h2>Chamber Project</h2>
                 <p><strong>Target Location:</strong> Cabimas, Zulia, Venezuela</p>
                 <p>The Chamber of Commerce project focuses on building a responsive and accessible platform to support local businesses, foster networking, and encourage community development.</p>
-                <p><a href="chamber/index.html">View Chamber Site</a></p>
+                <p><a href="chamber/index.html" class="project-link">View Chamber Site</a></p>
             </section>
         </div>
     </main>

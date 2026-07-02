@@ -4,6 +4,8 @@
     --text-color: #333333;
     --bg-color: #f4f4f9;
     --card-bg: #ffffff;
+    --completed-bg: #ffe6cc;
+    --completed-text: #663300;
     --font-family: 'Roboto', sans-serif;
 }
 
@@ -29,18 +31,43 @@ header h1 {
 
 nav {
     background-color: var(--secondary-color);
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
 
-nav a {
+#menu-toggle {
+    display: block;
+    background: none;
+    border: none;
     color: white;
-    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+}
+
+#nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+}
+
+#nav-menu.show {
+    display: flex;
+}
+
+#nav-menu li a {
+    color: white;
+    padding: 1rem;
     text-decoration: none;
     font-weight: 500;
+    display: block;
+    text-align: center;
 }
 
-nav a:hover, nav a.active {
+#nav-menu li a:hover, #nav-menu li a.active {
     background-color: var(--primary-color);
 }
 
@@ -54,12 +81,6 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: 2fr 1fr;
-    }
 }
 
 .card-section {
@@ -76,17 +97,64 @@ main {
     margin-top: 0;
 }
 
-.card-section ul {
-    padding-left: 1.2rem;
+.filter-buttons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
-.card-section a {
+.btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--secondary-color);
+    background-color: white;
+    color: var(--secondary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn.active, .btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #fafafa;
+}
+
+.course-card.completed {
+    background-color: var(--completed-bg);
+    color: var(--completed-text);
+    border-color: #e6b88a;
+}
+
+.credit-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.project-link {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 500;
 }
 
-.card-section a:hover {
+.project-link:hover {
     text-decoration: underline;
 }
 
@@ -97,4 +165,18 @@ footer {
     padding: 1.5rem 1rem;
     margin-top: 3rem;
     font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+    #nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+    }
 }
