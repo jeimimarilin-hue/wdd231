@@ -1,11 +1,29 @@
 @media (min-width: 768px) {
-    #menu-toggle { display: none; }
-    nav ul { display: flex; flex-direction: row; justify-content: center; }
-    nav ul li a { border-bottom: none; padding: 1rem 2rem; }
-    .course-grid { grid-template-columns: repeat(2, 1fr); }
-    .card:nth-child(3) { grid-column: span 2; }
+    #menu-toggle { 
+        display: none; 
+    }
+    nav ul { 
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+    }
+    nav ul li a { 
+        border-bottom: none; 
+        padding: 1rem 2rem; 
+    }
+    .course-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .card:nth-child(3) { 
+        grid-column: span 2; 
+    }
 }
+
 @media (min-width: 1024px) {
-    .course-grid { grid-template-columns: 1fr 2fr 1fr; }
-    .card:nth-child(3) { grid-column: span 1; }
+    .course-grid { 
+        grid-template-columns: 1fr 2fr 1fr; 
+    }
+    .card:nth-child(3) { 
+        grid-column: span 1; 
+    }
 }
