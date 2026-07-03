@@ -13,8 +13,19 @@ body {
     background-color: #f8fafc;
     color: #1e293b;
 }
-main { display: block; }
-h1 { font-size: 2em; margin: 0.67em 0; }
+main { 
+    display: block; 
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1 { 
+    font-size: 2em; 
+    margin: 0.67em 0; 
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
 img { border-style: none; max-width: 100%; height: auto; }
 
 header {
@@ -68,16 +79,6 @@ nav ul li a {
 }
 nav ul li a:hover, nav ul li a.active {
     background-color: #0369a1;
-}
-main {
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-h1 {
-    text-align: center;
-    color: #0f172a;
-    margin-bottom: 1.5rem;
 }
 .course-grid {
     display: grid;
@@ -174,15 +175,3 @@ footer {
     text-decoration: underline;
 }
 footer p { margin: 0.5rem 0; }
-
-@media (min-width: 768px) {
-    #menu-toggle { display: none; }
-    nav ul { display: flex; flex-direction: row; justify-content: center; }
-    nav ul li a { border-bottom: none; padding: 1rem 2rem; }
-    .course-grid { grid-template-columns: repeat(2, 1fr); }
-    .card:nth-child(3) { grid-column: span 2; }
-}
-@media (min-width: 1024px) {
-    .course-grid { grid-template-columns: 1fr 2fr 1fr; }
-    .card:nth-child(3) { grid-column: span 1; }
-}
