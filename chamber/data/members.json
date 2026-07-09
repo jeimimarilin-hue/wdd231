@@ -1,0 +1,65 @@
+[
+  {
+    "name": "El Saladillo Investments",
+    "address": "Intercomunal Av, Las Morochas Sector, Cabimas",
+    "phone": "+58 264-1234567",
+    "website": "https://www.saladillo-example.com",
+    "image": "icon5.jpg",
+    "membership": 3,
+    "tagline": "Leaders in industrial and commercial support."
+  },
+  {
+    "name": "Cabimas North Pharmacy",
+    "address": "Universidad Av, Chile Street",
+    "phone": "+58 264-7654321",
+    "website": "https://www.farmaciacabimas.com",
+    "image": "icon14.jpg",
+    "membership": 2,
+    "tagline": "Your health and well-being in one place."
+  },
+  {
+    "name": "El Carmen Hardware Store",
+    "address": "Downtown, Independencia Street",
+    "phone": "+58 414-9998877",
+    "website": "https://www.ferreelcarmen.com",
+    "image": "icon15.jpg",
+    "membership": 1,
+    "tagline": "Everything for construction and home improvement."
+  },
+  {
+    "name": "Cabimas Bakery & Cafe",
+    "address": "Principal Av, Miraflores Sector",
+    "phone": "+58 264-4445566",
+    "website": "https://www.cabimasbakery.com",
+    "image": "icon13.jpg",
+    "membership": 1,
+    "tagline": "Freshly baked traditions every morning."
+  },
+  {
+    "name": "Zulia Tech Solutions",
+    "address": "Rosario Street, Centro Building",
+    "phone": "+58 424-2223344",
+    "website": "https://www.zuliatech.com",
+    "image": "icon4.jpg",
+    "membership": 3,
+    "tagline": "Innovative software and networking developments."
+  },
+  {
+    "name": "Santa Costanza Clinic",
+    "address": "H Highway, El Golf Sector",
+    "phone": "+58 264-8889900",
+    "website": "https://www.santacostanza.com",
+    "image": "icon9.jpg",
+    "membership": 3,
+    "tagline": "Dedicated medical assistance for our community."
+  },
+  {
+    "name": "Costa Oriental Supermarket",
+    "address": "Intercomunal Av, Buena Vista Sector",
+    "phone": "+58 264-5556677",
+    "website": "https://www.costaoriental.com",
+    "image": "icon7.jpg",
+    "membership": 2,
+    "tagline": "The best prices and fresh products daily."
+  }
+]

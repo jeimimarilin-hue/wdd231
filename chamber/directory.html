@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabimas Chamber of Commerce - Directory</title>
+    <meta name="description" content="Business directory for the Chamber of Commerce of Cabimas, Zulia, Venezuela. Connect with local companies.">
+    <meta name="author" content="Jeimi Marilin Díaz Mariani">
+    
+    <link rel="icon" href="images/icon10.jpg" type="image/x-icon">
+
+    <meta property="og:title" content="Cabimas Chamber of Commerce - Directory">
+    <meta property="og:description" content="Explore and connect with trusted local businesses and organizations in Cabimas.">
+    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/share-image.jpg">
+    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="images/icon10.jpg" alt="Chamber Logo">
+            <h1>Cabimas Chamber of Commerce</h1>
+        </div>
+        <button id="menu-toggle">☰</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#" class="active">Directory</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Business Directory</h2>
+        
+        <div class="menu-view">
+            <button id="grid-btn" class="active">Grid View</button>
+            <button id="list-btn">List View</button>
+        </div>
+
+        <article id="directory-container" class="grid-view">
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Cabimas Chamber of Commerce</strong></p>
+            <p>Main Avenue, Cabimas, Zulia, Venezuela</p>
+            <p>Phone: +58 264-0000000 | info@cabimaschamber.org</p>
+        </div>
+        <hr>
+        <div class="footer-meta">
+            <p>&copy; <span id="current-year"></span> | Jeimi Marilin Díaz Mariani | WDD 231</p>
+            <p>Last Modification: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/directory.js" defer></script>
+</body>
+</html>
