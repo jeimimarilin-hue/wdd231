@@ -1,7 +1,8 @@
 const url = "data/members.json";
 const container = document.querySelector("#directory-container");
-const gridBtn = document.querySelector("#grid-btn");
-const listBtn = document.querySelector("#list-btn");
+
+const gridBtn = document.getElementById("grid-btn") || document.querySelector(".menu-view button:first-child");
+const listBtn = document.getElementById("list-btn") || document.querySelector(".menu-view button:last-child");
 
 async function getMembers() {
     try {
@@ -18,13 +19,14 @@ async function getMembers() {
 }
 
 function displayMembers(members) {
+    if (!container) return;
     container.innerHTML = "";
 
     members.forEach((member) => {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image}`);
+        img.setAttribute("src", `images/${member.image || member.logo || 'logo.png'}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
@@ -64,19 +66,24 @@ function displayMembers(members) {
     });
 }
 
-gridBtn.addEventListener("click", () => {
-    container.className = "grid-view";
-    gridBtn.classList.add("active");
-    listBtn.classList.remove("active");
-});
+if (gridBtn && listBtn) {
+    gridBtn.addEventListener("click", () => {
+        container.className = "grid-view";
+        gridBtn.classList.add("active");
+        listBtn.classList.remove("active");
+    });
 
-listBtn.addEventListener("click", () => {
-    container.className = "list-view";
-    listBtn.classList.add("active");
-    gridBtn.classList.remove("active");
-});
+    listBtn.addEventListener("click", () => {
+        container.className = "list-view";
+        listBtn.classList.add("active");
+        gridBtn.classList.remove("active");
+    });
+}
 
-document.querySelector("#current-year").textContent = new Date().getFullYear();
-document.querySelector("#last-modified").textContent = document.lastModified;
+const yearEl = document.querySelector("#current-year");
+const modifiedEl = document.querySelector("#last-modified");
+
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+if (modifiedEl) modifiedEl.textContent = document.lastModified;
 
 getMembers();
