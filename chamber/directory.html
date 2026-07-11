@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabimas Chamber of Commerce - Directory</title>
-    <meta name="description" content="Business directory for the Chamber of Commerce of Cabimas, Zulia, Venezuela. Connect with local companies.">
-    <meta name="author" content="Jeimi Marilin Díaz Mariani">
+    <meta name="description" content="Business Directory for the Cabimas Chamber of Commerce.">
     
-    <link rel="icon" href="images/icon10.jpg" type="image/x-icon">
-
     <meta property="og:title" content="Cabimas Chamber of Commerce - Directory">
-    <meta property="og:description" content="Explore and connect with trusted local businesses and organizations in Cabimas.">
-    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/share-image.jpg">
-    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jeimimarilin-hue.github.io/cse210-projects/chamber/images/share-image.jpg">
+    <meta property="og:url" content="https://jeimimarilin-hue.github.io/cse210-projects/chamber/directory.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
     <header>
         <div class="logo-area">
-            <img src="images/icon10.jpg" alt="Chamber Logo">
-            <h1>Cabimas Chamber of Commerce</h1>
+            <img src="images/logo.png" alt="Cabimas Chamber Logo" width="40" height="40">
+            <span>Cabimas Chamber</span>
         </div>
-        <button id="menu-toggle">☰</button>
-        <nav id="nav-menu">
+        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav>
             <ul>
-                <li><a href="#" class="active">Directory</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Join</a></li>
             </ul>
@@ -37,8 +39,9 @@
     </header>
 
     <main>
+        <h1>Cabimas Chamber of Commerce</h1>
         <h2>Business Directory</h2>
-        
+
         <div class="menu-view">
             <button id="grid-btn" class="active">Grid View</button>
             <button id="list-btn">List View</button>
@@ -61,6 +64,5 @@
         </div>
     </footer>
 
-    <script src="scripts/directory.js" defer></script>
 </body>
 </html>

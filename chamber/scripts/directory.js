@@ -1,6 +1,5 @@
 const url = "data/members.json";
 const container = document.querySelector("#directory-container");
-
 const gridBtn = document.querySelector("#grid-btn");
 const listBtn = document.querySelector("#list-btn");
 
@@ -9,12 +8,12 @@ async function getMembers() {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            displayMembers(data);
+            displayMembers(data.members);
         } else {
-            console.error("Data load failed.");
+            console.error("Error fetching data");
         }
     } catch (error) {
-        console.error("Connection error:", error);
+        console.error("Fetch error:", error);
     }
 }
 
@@ -22,32 +21,57 @@ function displayMembers(members) {
     container.innerHTML = "";
 
     members.forEach((member) => {
-        const card = document.createElement("section");
-        const levels = { 1: "Member", 2: "Silver", 3: "Gold" };
+        const section = document.createElement("section");
+        
+        const img = document.createElement("img");
+        img.setAttribute("src", `images/${member.image}`);
+        img.setAttribute("alt", `Logo of ${member.name}`);
+        img.setAttribute("width", "150");
+        img.setAttribute("height", "150");
+        img.setAttribute("loading", "lazy");
 
-        card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy">
-            <h3>${member.name}</h3>
-            <p class="tagline"><em>"${member.tagline}"</em></p>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Membership:</strong> ${levels[member.membership] || "Regular"}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-        `;
-        container.appendChild(card);
+        const h3 = document.createElement("h3");
+        h3.textContent = member.name;
+
+        const tagline = document.createElement("p");
+        tagline.className = "tagline";
+        tagline.textContent = `"${member.tagline}"`;
+
+        const address = document.createElement("p");
+        address.innerHTML = `<strong>Address:</strong> ${member.address}`;
+
+        const phone = document.createElement("p");
+        phone.innerHTML = `<strong>Phone:</strong> ${member.phone}`;
+
+        const membership = document.createElement("p");
+        membership.innerHTML = `<strong>Membership:</strong> ${member.membership}`;
+
+        const website = document.createElement("a");
+        website.setAttribute("href", member.website);
+        website.setAttribute("target", "_blank");
+        website.setAttribute("rel", "noopener noreferrer");
+        website.textContent = "Visit Website";
+
+        section.appendChild(img);
+        section.appendChild(h3);
+        section.appendChild(tagline);
+        section.appendChild(address);
+        section.appendChild(phone);
+        section.appendChild(membership);
+        section.appendChild(website);
+
+        container.appendChild(section);
     });
 }
 
 gridBtn.addEventListener("click", () => {
-    container.classList.add("grid-view");
-    container.classList.remove("list-view");
+    container.className = "grid-view";
     gridBtn.classList.add("active");
     listBtn.classList.remove("active");
 });
 
 listBtn.addEventListener("click", () => {
-    container.classList.add("list-view");
-    container.classList.remove("grid-view");
+    container.className = "list-view";
     listBtn.classList.add("active");
     gridBtn.classList.remove("active");
 });
