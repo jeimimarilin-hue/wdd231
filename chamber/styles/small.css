@@ -1,23 +1,18 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-}
-
 header {
-    background-color: #004b87;
+    background-color: #005691;
     color: white;
-    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    padding: 15px;
     position: relative;
 }
 
@@ -25,27 +20,33 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.logo-area img {
-    height: 40px;
-    width: auto;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 #menu-toggle {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
     cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+nav {
+    width: 100%;
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    align-items: center;
+    gap: 15px;
 }
 
 nav a {
@@ -60,148 +61,110 @@ nav a.active {
 }
 
 main {
+    padding: 20px;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+    margin: 0 auto;
 }
 
-h2 {
+h1, h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #004b87;
+    color: #005691;
 }
 
 .menu-view {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .menu-view button {
     padding: 10px 20px;
-    margin: 0 5px;
-    border: 1px solid #004b87;
+    font-size: 1rem;
+    border: 1px solid #005691;
     background-color: white;
-    color: #004b87;
-    font-weight: bold;
+    color: #005691;
     cursor: pointer;
     border-radius: 4px;
-    transition: 0.2s;
+    transition: all 0.3s ease;
 }
 
 .menu-view button.active {
-    background-color: #004b87;
+    background-color: #005691;
     color: white;
 }
 
-.grid-view {
+#directory-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
+    transition: all 0.3s ease;
 }
 
-.grid-view section {
+#directory-container.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+#directory-container section {
     background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.grid-view section img {
-    max-height: 100px;
-    width: auto;
-    margin-bottom: 15px;
-}
-
-.grid-view h3 {
-    margin-bottom: 10px;
-    color: #111;
-}
-
-.grid-view .tagline {
-    color: #666;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-}
-
-.grid-view p {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #444;
-}
-
-.grid-view a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #004b87;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.list-view {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.list-view section {
-    display: grid;
-    grid-template-columns: 2fr 3.5fr 2fr 1.5fr 1.5fr;
     align-items: center;
-    background-color: white;
-    padding: 12px 20px;
-    border: 1px solid #e0e0e0;
+}
+
+#directory-container section img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    background-color: #fafafa;
     border-radius: 4px;
-    gap: 15px;
+    display: block;
 }
 
-.list-view section img, 
-.list-view .tagline {
-    display: none;
+.tagline {
+    font-style: italic;
+    color: #666;
+    margin: 5px 0 15px 0;
 }
 
-.list-view section h3 {
-    font-size: 1rem;
-    color: #004b87;
+#directory-container.list-view {
+    grid-template-columns: 1fr;
 }
 
-.list-view p {
-    font-size: 0.85rem;
-    margin: 0;
+#directory-container.list-view section {
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 15px;
 }
 
-.list-view a {
-    color: #004b87;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: right;
-    white-space: nowrap;
-}
-
-.list-view section:nth-child(even) {
-    background-color: #f9fbfd;
+#directory-container.list-view section img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+    display: block;
 }
 
 footer {
     background-color: #222;
-    color: #ccc;
-    padding: 30px 15px;
+    color: #ddd;
+    padding: 30px 20px;
     margin-top: 40px;
     text-align: center;
     font-size: 0.9rem;
 }
 
-.footer-info p {
-    margin-bottom: 5px;
+footer p {
+    margin: 5px 0;
 }
 
 footer hr {
     border: 0;
     border-top: 1px solid #444;
-    margin: 20px 0;
-}
-
-.footer-meta p {
-    margin-bottom: 5px;
+    margin: 20px auto;
 }
