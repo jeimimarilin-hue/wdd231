@@ -24,17 +24,11 @@ function displayMembers(members) {
     if (!container) return;
     container.innerHTML = "";
 
-    members.forEach((member, index) => {
+    members.forEach((member) => {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        
-        let imageName = `icon${index + 1}.webp`;
-        if (member.image && member.image.includes(".webp")) {
-            imageName = member.image;
-        }
-        
-        img.setAttribute("src", `images/${imageName}`);
+        img.setAttribute("src", `images/${member.image}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
