@@ -1,20 +1,24 @@
 const url = "data/members.json";
 const container = document.querySelector("#directory-container");
 
-const gridBtn = document.getElementById("grid-btn") || document.querySelector(".menu-view button:first-child");
-const listBtn = document.getElementById("list-btn") || document.querySelector(".menu-view button:last-child");
+const gridBtn = document.querySelector("#grid-btn");
+const listBtn = document.querySelector("#list-btn");
 
 async function getMembers() {
     try {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            displayMembers(data.members);
+            if (data.members) {
+                displayMembers(data.members);
+            } else if (Array.isArray(data)) {
+                displayMembers(data);
+            }
         } else {
-            console.error("Error fetching data");
+            console.error("Error al obtener los datos del servidor");
         }
     } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Error en la petición fetch:", error);
     }
 }
 
@@ -26,7 +30,7 @@ function displayMembers(members) {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image || member.logo || 'logo.png'}`);
+        img.setAttribute("src", `images/${member.image || 'icon10.jpg'}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
@@ -37,7 +41,7 @@ function displayMembers(members) {
 
         const tagline = document.createElement("p");
         tagline.className = "tagline";
-        tagline.textContent = `"${member.tagline}"`;
+        tagline.textContent = member.tagline ? `"${member.tagline}"` : "";
 
         const address = document.createElement("p");
         address.innerHTML = `<strong>Address:</strong> ${member.address}`;
@@ -49,14 +53,14 @@ function displayMembers(members) {
         membership.innerHTML = `<strong>Membership:</strong> ${member.membership}`;
 
         const website = document.createElement("a");
-        website.setAttribute("href", member.website);
+        website.setAttribute("href", member.website || "#");
         website.setAttribute("target", "_blank");
         website.setAttribute("rel", "noopener noreferrer");
         website.textContent = "Visit Website";
 
         section.appendChild(img);
         section.appendChild(h3);
-        section.appendChild(tagline);
+        if (member.tagline) section.appendChild(tagline);
         section.appendChild(address);
         section.appendChild(phone);
         section.appendChild(membership);
@@ -68,13 +72,13 @@ function displayMembers(members) {
 
 if (gridBtn && listBtn) {
     gridBtn.addEventListener("click", () => {
-        container.className = "grid-view";
+        if (container) container.className = "grid-view";
         gridBtn.classList.add("active");
         listBtn.classList.remove("active");
     });
 
     listBtn.addEventListener("click", () => {
-        container.className = "list-view";
+        if (container) container.className = "list-view";
         listBtn.classList.add("active");
         gridBtn.classList.remove("active");
     });
