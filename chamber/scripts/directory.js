@@ -30,7 +30,7 @@ function displayMembers(members) {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image || 'icon10.jpg'}`);
+        img.setAttribute("src", `images/${member.image || 'icon10.webp'}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
