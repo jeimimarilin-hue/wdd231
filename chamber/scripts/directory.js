@@ -14,11 +14,9 @@ async function getMembers() {
             } else if (Array.isArray(data)) {
                 displayMembers(data);
             }
-        } else {
-            console.error("Error al obtener los datos del servidor");
         }
     } catch (error) {
-        console.error("Error en la petición fetch:", error);
+        console.error("Error:", error);
     }
 }
 
@@ -30,11 +28,12 @@ function displayMembers(members) {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image || 'icon10.webp'}`);
+        img.setAttribute("src", `images/${member.image || 'icon10.jpg'}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
         img.setAttribute("loading", "lazy");
+        img.decoding = "async";
 
         const h3 = document.createElement("h3");
         h3.textContent = member.name;

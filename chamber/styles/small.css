@@ -97,14 +97,14 @@ h1, h2 {
 #directory-container {
     display: grid;
     gap: 20px;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
 #directory-container.grid-view {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-#directory-container section {
+#directory-container.grid-view section {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -115,14 +115,13 @@ h1, h2 {
     align-items: center;
 }
 
-#directory-container section img {
+#directory-container.grid-view section img {
+    display: block;
     width: 150px;
     height: 150px;
-    object-fit: contain;
+    object-fit: cover;
     margin-bottom: 15px;
-    background-color: #fafafa;
     border-radius: 4px;
-    display: block;
 }
 
 .tagline {
@@ -136,18 +135,27 @@ h1, h2 {
 }
 
 #directory-container.list-view section {
-    text-align: left;
-    align-items: center;
-    flex-direction: row;
-    gap: 20px;
+    background-color: white;
     padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #directory-container.list-view section img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 0;
     display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
 }
 
 footer {
