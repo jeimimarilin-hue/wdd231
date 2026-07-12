@@ -24,11 +24,17 @@ function displayMembers(members) {
     if (!container) return;
     container.innerHTML = "";
 
-    members.forEach((member) => {
+    members.forEach((member, index) => {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image || 'icon10.jpg'}`);
+        
+        let imageName = `icon${index + 1}.webp`;
+        if (member.image && member.image.includes(".webp")) {
+            imageName = member.image;
+        }
+        
+        img.setAttribute("src", `images/${imageName}`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
