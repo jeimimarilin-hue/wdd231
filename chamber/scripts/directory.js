@@ -33,11 +33,12 @@ function displayMembers(members) {
     if (!container) return;
     container.innerHTML = "";
 
-    members.forEach((member) => {
+    members.forEach((member, index) => {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        img.setAttribute("src", `images/${member.image}`);
+        const iconNumber = (index % 15) + 1;
+        img.setAttribute("src", `images/icon${iconNumber}.webp`);
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
