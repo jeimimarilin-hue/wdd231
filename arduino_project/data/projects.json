@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "title": "Humidity Sensor",
+      "difficulty": "Beginner",
+      "description": "Monitor plant humidity using a KY-015 sensor.",
+      "link": "https://arduino.cc/projects/humidity"
+    },
+    {
+      "title": "IR Remote Control",
+      "difficulty": "Intermediate",
+      "description": "Control LED lights using an infrared remote.",
+      "link": "https://arduino.cc/projects/ir-control"
+    }
+  ]
+}
