@@ -9,7 +9,8 @@
         display: none;
     }
 
-    nav {
+    #nav-container {
+        display: block;
         width: auto;
     }
 
@@ -29,7 +30,7 @@
 
     #directory-container.list-view section {
         display: grid;
-        grid-template-columns: 1fr 2fr 3fr 1.5fr 1.5fr;
+        grid-template-columns: 2fr 3fr 1.5fr 1.5fr;
         align-items: center;
         text-align: left;
         padding: 12px 25px;
@@ -37,10 +38,7 @@
     }
 
     #directory-container.list-view section img {
-        display: block;
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
+        display: none;
     }
 
     #directory-container.list-view h3 {

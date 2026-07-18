@@ -4,6 +4,15 @@ const container = document.querySelector("#directory-container");
 const gridBtn = document.querySelector("#grid-btn");
 const listBtn = document.querySelector("#list-btn");
 
+const menuToggle = document.querySelector("#menu-toggle");
+const navContainer = document.querySelector("#nav-container");
+
+if (menuToggle && navContainer) {
+    menuToggle.addEventListener("click", () => {
+        navContainer.classList.toggle("open");
+    });
+}
+
 async function getMembers() {
     try {
         const response = await fetch(url);

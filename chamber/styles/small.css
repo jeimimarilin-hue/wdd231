@@ -35,8 +35,13 @@ header {
     top: 15px;
 }
 
-nav {
+#nav-container {
     width: 100%;
+    display: none;
+}
+
+#nav-container.open {
+    display: block;
 }
 
 nav ul {
@@ -58,6 +63,8 @@ nav a {
 
 nav a.active {
     border-bottom: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
 main {
@@ -141,21 +148,16 @@ h1, h2 {
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
-    gap: 20px;
+    gap: 5px;
     width: 100%;
     box-sizing: border-box;
 }
 
 #directory-container.list-view section img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 4px;
-    flex-shrink: 0;
+    display: none;
 }
 
 footer {
