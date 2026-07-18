@@ -63,7 +63,7 @@ nav a {
 
 nav a.active {
     border-bottom: 2px solid white;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #003366;
     border-radius: 4px;
 }
 
