@@ -33,12 +33,12 @@ function displayMembers(members) {
     if (!container) return;
     container.innerHTML = "";
 
-    members.forEach((member, index) => {
+    members.forEach((member) => {
         const section = document.createElement("section");
         
         const img = document.createElement("img");
-        const iconNumber = (index % 15) + 1;
-        img.setAttribute("src", `images/icon${iconNumber}.webp`);
+        // AQUÍ SE LEE EL NOMBRE EXACTO DEL ARCHIVO JSON SEGÚN LA RÚBRICA
+        img.setAttribute("src", `images/${member.image}`); 
         img.setAttribute("alt", `Logo of ${member.name}`);
         img.setAttribute("width", "150");
         img.setAttribute("height", "150");
@@ -59,7 +59,7 @@ function displayMembers(members) {
         phone.innerHTML = `<strong>Phone:</strong> ${member.phone}`;
 
         const membership = document.createElement("p");
-        membership.innerHTML = `<strong>Membership:</strong> ${member.membership}`;
+        membership.innerHTML = `<strong>Membership Level:</strong> ${member.membership}`;
 
         const website = document.createElement("a");
         website.setAttribute("href", member.website || "#");
