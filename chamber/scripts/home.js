@@ -1,99 +1,135 @@
-const menuToggle = document.querySelector("#menu-toggle");
-const navContainer = document.querySelector("#nav-container");
+const menuToggle = document.getElementById('menu-toggle');
+const navContainer = document.getElementById('nav-container');
+const currentYearSpan = document.getElementById('current-year');
+const lastModifiedSpan = document.getElementById('last-modified');
+const weatherCurrentDiv = document.getElementById('weather-current');
+const weatherForecastDiv = document.getElementById('weather-forecast');
+const spotlightContainer = document.getElementById('spotlight-container');
 
 if (menuToggle && navContainer) {
-    menuToggle.addEventListener("click", () => {
-        navContainer.classList.toggle("open");
+    menuToggle.addEventListener('click', () => {
+        navContainer.classList.toggle('open');
     });
 }
 
-const yearEl = document.querySelector("#current-year");
-const modifiedEl = document.querySelector("#last-modified");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-if (modifiedEl) modifiedEl.textContent = document.lastModified;
+if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+}
+if (lastModifiedSpan) {
+    lastModifiedSpan.textContent = document.lastModified;
+}
 
-const weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=10.388&lon=-71.439&units=metric&appid=YOUR_API_KEY";
-const membersUrl = "data/members.json";
+const weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=10.388&lon=-71.439&units=metric&appid=9100f3ee909e1823b986f0138f6a1fc9";
 
 async function fetchWeather() {
     try {
         const response = await fetch(weatherUrl);
-        if (response.ok) {
-            const data = await response.json();
-            displayWeather(data);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
         }
+        const data = await response.json();
+        displayCurrentWeather(data);
+        displayWeatherForecast(data);
     } catch (error) {
         console.error(error);
+        if (weatherCurrentDiv) {
+            weatherCurrentDiv.innerHTML = `<p>Weather data temporarily unavailable.</p>`;
+        }
     }
 }
 
-function displayWeather(data) {
-    const currentContainer = document.querySelector("#weather-current");
-    const forecastContainer = document.querySelector("#weather-forecast");
-    
-    if (!currentContainer || !forecastContainer) return;
+function displayCurrentWeather(data) {
+    if (!weatherCurrentDiv) return;
+    const current = data.list[0];
+    const temp = Math.round(current.main.temp);
+    const description = current.weather[0].description;
+    const iconCode = current.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
-    const currentList = data.list[0];
-    currentContainer.innerHTML = `
-        <p class="temp-display"><strong>${Math.round(currentList.main.temp)}&deg;C</strong></p>
-        <p class="desc-display">${currentList.weather[0].description}</p>
+    weatherCurrentDiv.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img src="${iconUrl}" alt="${description}" width="50" height="50">
+            <div>
+                <p class="temp-display">${temp}°C</p>
+                <p class="desc-display">${description}</p>
+            </div>
+        </div>
     `;
+}
 
-    forecastContainer.innerHTML = "";
-    const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
-    
-    dailyData.forEach(day => {
-        const dateObj = new Date(day.dt_txt);
-        const dayName = dateObj.toLocaleDateString("en-US", { weekday: "short" });
-        const div = document.createElement("div");
-        div.className = "forecast-day";
-        div.innerHTML = `
-            <span>${dayName}</span>
-            <strong>${Math.round(day.main.temp)}&deg;C</strong>
+function displayWeatherForecast(data) {
+    if (!weatherForecastDiv) return;
+    const dailyData = {};
+    const todayStr = new Date().toISOString().split('T')[0];
+
+    data.list.forEach(item => {
+        const dateStr = item.dt_txt.split(' ')[0];
+        if (dateStr !== todayStr) {
+            if (!dailyData[dateStr]) {
+                dailyData[dateStr] = [];
+            }
+            dailyData[dateStr].push(item.main.temp);
+        }
+    });
+
+    const forecastDays = Object.keys(dailyData).slice(0, 3);
+    weatherForecastDiv.innerHTML = '';
+
+    forecastDays.forEach(dateStr => {
+        const temps = dailyData[dateStr];
+        const avgTemp = Math.round(temps.reduce((sum, t) => sum + t, 0) / temps.length);
+        const dateObj = new Date(dateStr + 'T00:00:00');
+        const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
+
+        const dayCard = document.createElement('div');
+        dayCard.className = 'forecast-day';
+        dayCard.innerHTML = `
+            <strong>${dayName}</strong>
+            <span>${avgTemp}°C</span>
         `;
-        forecastContainer.appendChild(div);
+        weatherForecastDiv.appendChild(dayCard);
     });
 }
+
+const membersUrl = "data/members.json";
 
 async function fetchSpotlights() {
     try {
         const response = await fetch(membersUrl);
-        if (response.ok) {
-            const data = await response.json();
-            const members = data.members || data;
-            displaySpotlights(members);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
         }
+        const members = await response.json();
+        const eligibleMembers = members.filter(m => m.membershipLevel === "Gold" || m.membershipLevel === "Silver");
+        const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
+        const selectedMembers = shuffled.slice(0, Math.floor(Math.random() * 2) + 2);
+        displaySpotlights(selectedMembers);
     } catch (error) {
         console.error(error);
+        if (spotlightContainer) {
+            spotlightContainer.innerHTML = `<p>Member spotlights temporarily unavailable.</p>`;
+        }
     }
 }
 
 function displaySpotlights(members) {
-    const container = document.querySelector("#spotlight-container");
-    if (!container) return;
+    if (!spotlightContainer) return;
+    spotlightContainer.innerHTML = '';
 
-    const eligible = members.filter(m => m.membership === 2 || m.membership === 3 || m.membership === "Silver" || m.membership === "Gold");
-    const shuffled = eligible.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 3);
-
-    container.innerHTML = "";
-    selected.forEach(member => {
-        const card = document.createElement("div");
-        card.className = "spotlight-card";
-        
-        const levelName = (member.membership === 3 || member.membership === "Gold") ? "Gold Member" : "Silver Member";
-
+    members.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'spotlight-card';
         card.innerHTML = `
             <h4>${member.name}</h4>
-            <img src="images/${member.image}" alt="${member.name} Logo" width="80" height="80" loading="lazy">
-            <p class="spotlight-tagline">${member.tagline || ""}</p>
+            <p class="spotlight-tagline">"${member.tagline || 'Driving community success.'}"</p>
+            <img src="${member.image}" alt="${member.name} Logo" width="100" height="100" loading="lazy">
             <hr class="spotlight-divider">
+            <p><strong>Email:</strong> ${member.email || 'info@' + member.name.toLowerCase().replace(/\s+/g, '') + '.com'}</p>
             <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p class="spotlight-level">${levelName}</p>
-            <a href="${member.website}" target="_blank" rel="noopener noreferrer" class="spotlight-link">Visit Website</a>
+            <p class="spotlight-level">${member.membershipLevel} Member</p>
+            <a href="${member.website}" target="_blank" rel="noopener" class="spotlight-link">Visit Website</a>
         `;
-        container.appendChild(card);
+        spotlightContainer.appendChild(card);
     });
 }
 

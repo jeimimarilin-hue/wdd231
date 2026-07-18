@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabimas Chamber of Commerce - Business Directory</title>
-    <meta name="description" content="Explore the business directory of the Cabimas Chamber of Commerce. Connect with local businesses and professional services.">
+    <title>Cabimas Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Cabimas Chamber of Commerce. Growing businesses and supporting the local community.">
     <meta name="author" content="Jeimi Marilin Díaz Mariani">
     <link rel="icon" href="images/icon10.webp" type="image/webp">
     
@@ -17,41 +17,71 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
-    <meta property="og:title" content="Cabimas Chamber of Commerce - Directory">
+    <meta property="og:title" content="Cabimas Chamber of Commerce - Home">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/share-image.webp">
-    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Explore the business directory of the Cabimas Chamber of Commerce. Connect with local businesses and professional services.">
+    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/index.html">
+    <meta property="og:description" content="Welcome to the Cabimas Chamber of Commerce. Growing businesses and supporting the local community.">
     
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
 
     <header>
         <div class="logo-area">
-            <img src="images/icon10.webp" alt="Cabimas Chamber Logo" width="40" height="40">
+            <img src="images/icon10.webp" alt="Cabimas Chamber Logo" width="40" height="40" fetchpriority="high">
             <span>Cabimas Chamber</span>
         </div>
         <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
         <nav id="nav-container">
             <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Cabimas Chamber of Commerce</h1>
-        <h2>Business Directory</h2>
+    <main class="home-main">
+        <section class="hero-wrapper">
+            <img src="images/building1.webp" alt="Cabimas Business District Banner" class="hero-image" width="800" height="534" fetchpriority="high" loading="eager" decoding="sync">
+            <div class="cta-box">
+                <h2>Empower Your Business Today</h2>
+                <p>Join the network that drives economic expansion and leadership in Cabimas.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
 
-        <div class="menu-view">
-            <button id="grid-btn" class="active">Grid View</button>
-            <button id="list-btn">List View</button>
+        <div class="home-grid">
+            <section class="home-card status-card">
+                <h3>Current Events</h3>
+                <div class="event-item">
+                    <h4>Annual Economic Forum 2026</h4>
+                    <p>Date: August 14, 2026</p>
+                    <p>Join local business leaders to discuss new technology implementation in logistics.</p>
+                </div>
+                <div class="event-item">
+                    <h4>Small Business Workshop</h4>
+                    <p>Date: September 02, 2026</p>
+                    <p>A comprehensive training session on digital integration and customer outreach.</p>
+                </div>
+            </section>
+
+            <section class="home-card weather-card">
+                <h3>Weather Information</h3>
+                <div id="weather-current">
+                    <p>Loading weather data...</p>
+                </div>
+                <hr class="card-divider">
+                <h4>3-Day Forecast</h4>
+                <div id="weather-forecast"></div>
+            </section>
         </div>
 
-        <article id="directory-container" class="grid-view"></article>
+        <section class="spotlight-section">
+            <h3>Member Spotlights</h3>
+            <div id="spotlight-container"></div>
+        </section>
     </main>
 
     <footer>
