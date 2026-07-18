@@ -105,11 +105,11 @@ h1, h2 {
     display: grid;
     gap: 20px;
     width: 100%;
-    min-height: 70vh;
 }
 
 #directory-container.grid-view {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    min-height: 70vh;
 }
 
 #directory-container.grid-view section {
@@ -140,6 +140,7 @@ h1, h2 {
 
 #directory-container.list-view {
     grid-template-columns: 1fr;
+    min-height: auto;
 }
 
 #directory-container.list-view section {
@@ -159,6 +160,220 @@ h1, h2 {
 
 #directory-container.list-view section img {
     display: none;
+}
+
+.home-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.cta-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 51, 102, 0.85);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    width: 85%;
+    box-sizing: border-box;
+}
+
+.cta-box h2 {
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+}
+
+.cta-box p {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f4f7f6;
+    color: #005691;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e0e5e4;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.home-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.home-card h3 {
+    margin-top: 0;
+    color: #005691;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 8px;
+}
+
+.event-item {
+    margin-bottom: 15px;
+}
+
+.event-item h4 {
+    margin: 5px 0;
+    color: #333;
+}
+
+.event-item p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.temp-display {
+    font-size: 2.2rem;
+    margin: 10px 0 0 0;
+    color: #005691;
+}
+
+.desc-display {
+    margin: 0 0 15px 0;
+    text-transform: capitalize;
+    color: #555;
+}
+
+.card-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+#weather-forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    min-height: 75px;
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f7f6;
+    padding: 8px 12px;
+    border-radius: 4px;
+    min-width: 60px;
+}
+
+.spotlight-section {
+    background-color: #005691;
+    color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+}
+
+.spotlight-section h3 {
+    margin-top: 0;
+    text-align: center;
+    color: white;
+}
+
+#spotlight-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    min-height: 1000px;
+}
+
+.spotlight-card {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.spotlight-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #005691;
+}
+
+.spotlight-card img {
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.spotlight-tagline {
+    font-style: italic;
+    color: #666;
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+}
+
+.spotlight-divider {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.spotlight-card p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+}
+
+.spotlight-level {
+    font-weight: bold;
+    color: #005691;
+    margin-top: 5px;
+}
+
+.spotlight-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #005691;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.spotlight-link:hover {
+    text-decoration: underline;
 }
 
 footer {

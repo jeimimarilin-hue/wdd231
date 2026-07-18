@@ -1,81 +1,105 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Course Home Page</title>
-    <meta name="description" content="Course home page for Jeimi Díaz Mariani in WDD 231: Web Frontend Development I. Features dynamic course filtering, responsive layout, and credit tracking.">
-    <meta name="author" content="Jeimi Díaz Mariani">
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Cabimas Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Cabimas Chamber of Commerce. Growing businesses and supporting the local community.">
+    <meta name="author" content="Jeimi Marilin Díaz Mariani">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 48rem)">
     
-    <script defer src="scripts/navigation.js"></script>
-    <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/course.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="Cabimas Chamber of Commerce - Home">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/share-image.webp">
+    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/index.html">
+    <meta property="og:description" content="Welcome to the Cabimas Chamber of Commerce. Growing businesses and supporting the local community.">
+    
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
 
     <header>
         <div class="logo-area">
-            <img src="images/logo.svg" alt="Course Site Logo" width="50" height="50">
-            <span>Jeimi Díaz Mariani</span>
+            <img src="images/icon10.webp" alt="Cabimas Chamber Logo" width="40" height="40" fetchpriority="high">
+            <span>Cabimas Chamber</span>
         </div>
-        <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav id="nav-container">
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav aria-label="Primary Navigation">
-        <ul id="nav-menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="chamber/index.html">Chamber</a></li>
-            <li><a href="final/index.html">Final</a></li>
-        </ul>
-    </nav>
+    <main class="home-main">
+        <section class="hero-wrapper">
+            <img src="images/building1.webp" alt="Cabimas Business District Banner" class="hero-image" width="1200" height="450" fetchpriority="high">
+            <div class="cta-box">
+                <h2>Empower Your Business Today</h2>
+                <p>Join the network that drives economic expansion and leadership in Cabimas.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
 
-    <main>
-        <h1>Home</h1>
-        
-        <div class="course-grid">
-            <section class="card">
-                <h2>Course Information</h2>
-                <ul>
-                    <li><strong>Location:</strong> Cabimas, Zulia, Venezuela</li>
-                    <li><strong>Program:</strong> Computer Science & Web Development</li>
-                </ul>
-            </section>
-
-            <section class="card">
-                <h2>Web and Computer Science Certificate</h2>
-                <div class="filter-controls">
-                    <button id="btn-all" class="filter-btn active-btn" aria-label="Show all courses">All</button>
-                    <button id="btn-cse" class="filter-btn" aria-label="Filter courses by CSE">CSE</button>
-                    <button id="btn-wdd" class="filter-btn" aria-label="Filter courses by WDD">WDD</button>
+        <div class="home-grid">
+            <section class="home-card status-card">
+                <h3>Current Events</h3>
+                <div class="event-item">
+                    <h4>Annual Economic Forum 2026</h4>
+                    <p>Date: August 14, 2026</p>
+                    <p>Join local business leaders to discuss new technology implementation in logistics.</p>
                 </div>
-                <div id="course-list-container" class="courses-container"></div>
-                <div class="credits-display">
-                    <p>Total Credits Displayed: <span id="total-credits">0</span></p>
+                <div class="event-item">
+                    <h4>Small Business Workshop</h4>
+                    <p>Date: September 02, 2026</p>
+                    <p>A comprehensive training session on digital integration and customer outreach.</p>
                 </div>
             </section>
 
-            <section class="card">
-                <h2>Our Mission</h2>
-                <p>Building responsive, accessible, and highly optimized web applications to solve real-world problems effectively.</p>
+            <section class="home-card weather-card">
+                <h3>Weather Information</h3>
+                <div id="weather-current">
+                    <p>Loading weather data...</p>
+                </div>
+                <hr class="card-divider">
+                <h4>3-Day Forecast</h4>
+                <div id="weather-forecast"></div>
             </section>
         </div>
+
+        <section class="spotlight-section">
+            <h3>Member Spotlights</h3>
+            <div id="spotlight-container"></div>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-social">
-            <a href="https://github.com/jeimimarilin-hue/wdd231" target="_blank" aria-label="Visit my GitHub Repository">GitHub Repository</a>
-            <a href="https://linkedin.com" target="_blank" aria-label="Visit my LinkedIn Profile">LinkedIn</a>
+        <div class="footer-info">
+            <div>
+                <strong>Cabimas Chamber of Commerce</strong>
+                <p>Main Avenue, Cabimas, Zulia, Venezuela</p>
+            </div>
+            <div>
+                <p>Phone: +58 264-0000000</p>
+                <p>info@cabimaschamber.org</p>
+            </div>
         </div>
-        <p>&copy; <span id="currentyear"></span> | Jeimi Díaz Mariani | Venezuela</p>
-        <p id="lastModified"></p>
+        <hr>
+        <div class="footer-meta">
+            <p>&copy; <span id="current-year"></span> | Jeimi Marilin Díaz Mariani | WDD 231</p>
+            <p>Last Modification: <span id="last-modified"></span></p>
+        </div>
     </footer>
 
 </body>
