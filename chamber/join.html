@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Membership Application</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-box">
+            <h1>Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-main">
+        <h2>Membership Application</h2>
+        <div class="join-container">
+            <form method="get" action="thankyou.html" class="join-form">
+                <label>First Name * <input type="text" name="fname" title="First Name" autocomplete="given-name" required></label>
+                <label>Last Name * <input type="text" name="lname" title="Last Name" autocomplete="family-name" required></label>
+                <label>Organizational Title <input type="text" name="title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}"></label>
+                <label>Email * <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required></label>
+                <label>Mobile Phone * <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required></label>
+                <label>Business Name * <input type="text" name="organization" title="Business Name" autocomplete="organization" required></label>
+                
+                <label>Membership Level
+                    <select name="membership" required>
+                        <option value="" disabled selected>Select a membership level</option>
+                        <option value="np">NP Membership (Non Profit - No Fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <label>Business Description <textarea name="description" title="Business Description"></textarea></label>
+                
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Join the Chamber" class="submit-btn">
+            </form>
+
+            <section class="cards-container">
+                <div class="membership-card">
+                    <h3>NP Membership</h3>
+                    <button type="button" id="np-btn">View Benefits</button>
+                </div>
+                <div class="membership-card">
+                    <h3>Bronze Membership</h3>
+                    <button type="button" id="bronze-btn">View Benefits</button>
+                </div>
+                <div class="membership-card">
+                    <h3>Silver Membership</h3>
+                    <button type="button" id="silver-btn">View Benefits</button>
+                </div>
+                <div class="membership-card">
+                    <h3>Gold Membership</h3>
+                    <button type="button" id="gold-btn">View Benefits</button>
+                </div>
+            </section>
+        </div>
+
+        <dialog id="np-modal">
+            <h3>NP Membership Benefits</h3>
+            <p>For non-profit organizations. No membership fee required. Access to basic chamber meetings and community events.</p>
+            <button id="close-np">Close</button>
+        </dialog>
+
+        <dialog id="bronze-modal">
+            <h3>Bronze Membership Benefits</h3>
+            <p>Includes basic advertising in the chamber directory, newsletter mentions, and standard event discounts.</p>
+            <button id="close-bronze">Close</button>
+        </dialog>
+
+        <dialog id="silver-modal">
+            <h3>Silver Membership Benefits</h3>
+            <p>Includes spotlight positions on the home page, advanced training sessions, and reduced rates for major events.</p>
+            <button id="close-silver">Close</button>
+        </dialog>
+
+        <dialog id="gold-modal">
+            <h3>Gold Membership Benefits</h3>
+            <p>Maximum visibility with top spotlight positioning, VIP event access, free training workshops, and premium sponsorships.</p>
+            <button id="close-gold">Close</button>
+        </dialog>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chamber of Commerce</p>
+    </footer>
+</body>
+</html>
