@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Submitted</title>
+    <title>Thank You - Chamber of Commerce Membership Application</title>
+    <meta name="description" content="Thank you for applying to the Chamber of Commerce membership program.">
+    <meta name="author" content="Jeimi Díaz Mariani">
+    <link rel="icon" href="images/icon10.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-box">
-            <h1>Chamber of Commerce</h1>
+    <header class="site-header">
+        <div class="header-side-block">
+            <img src="images/icon16.webp" alt="Chamber Logo" class="header-icon">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
+        <div class="header-center">
+            <div class="header-box">
+                <span class="site-title">Chamber of Commerce</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-side-block">
+            <img src="images/icon16.webp" alt="Chamber Logo" class="header-icon">
+        </div>
     </header>
 
-    <main class="thankyou-main">
-        <h2>Thank You for Applying!</h2>
-        <p>Your application has been successfully submitted. Here is the information you provided:</p>
-        <div id="results" class="results-box"></div>
+    <main class="page-background">
+        <div class="join-main thankyou-card">
+            <h1>Thank You for Applying!</h1>
+            <p class="thankyou-intro">Your application has been successfully submitted. Here is the information you provided:</p>
+            
+            <div id="results" class="results-container">
+            </div>
+
+            <div class="thankyou-actions">
+                <a href="join.html" class="submit-btn">Submit Another Application</a>
+                <a href="index.html" class="submit-btn secondary-btn">Return to Home</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Chamber of Commerce</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Chamber of Commerce by Jeimi Diaz Mariani</p>
     </footer>
 </body>
 </html>
