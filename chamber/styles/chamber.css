@@ -8,27 +8,14 @@ body {
 
 .site-header {
     display: flex;
+    justify-content: center;
     background-color: #00838f;
     width: 100%;
 }
 
-.header-side-block {
-    flex: 1;
-    background-color: #80deea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-.header-icon {
-    max-height: 120px;
-    width: auto;
-    object-fit: contain;
-}
-
 .header-center {
-    flex: 4;
+    width: 100%;
+    max-width: 1200px;
     padding: 20px;
     text-align: center;
 }
