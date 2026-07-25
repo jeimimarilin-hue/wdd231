@@ -1,7 +1,72 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fdfdfd;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    display: flex;
+    background-color: #00838f;
+    width: 100%;
+}
+
+.header-side-block {
+    flex: 1;
+    background-color: #80deea;
+}
+
+.header-center {
+    flex: 4;
+    padding: 20px;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.site-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.site-header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+    color: #e0f7fa;
+    text-decoration: underline;
+}
+
+.page-background {
+    position: relative;
+    background-image: linear-gradient(rgba(253, 253, 253, 0.85), rgba(253, 253, 253, 0.85)), url('../images/building1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+
 .join-main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .join-container {
@@ -28,6 +93,7 @@
     flex-direction: column;
     margin-bottom: 15px;
     font-weight: bold;
+    color: #333333;
 }
 
 .join-form input, 
@@ -37,16 +103,24 @@
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: #ffffff;
+    color: #222222;
 }
 
 .submit-btn {
-    background-color: #005f73;
+    background-color: #00838f;
     color: white;
     border: none;
     cursor: pointer;
-    padding: 12px;
+    padding: 12px 20px;
     font-size: 1rem;
     border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #006064;
 }
 
 .cards-container {
@@ -56,11 +130,30 @@
 }
 
 .membership-card {
-    background: #f1f1f1;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     animation: fadeInSlide 1s ease-out forwards;
+}
+
+.np-card {
+    background-color: #e0e0e0;
+    border-left: 5px solid #757575;
+}
+
+.bronze-card {
+    background-color: #f5deb3;
+    border-left: 5px solid #cd7f32;
+}
+
+.silver-card {
+    background-color: #f0f8ff;
+    border-left: 5px solid #c0c0c0;
+}
+
+.gold-card {
+    background-color: #fff8dc;
+    border-left: 5px solid #ffd700;
 }
 
 @keyframes fadeInSlide {
@@ -86,10 +179,9 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.results-box {
-    background: #f9f9f9;
+.site-footer {
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-top: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
 }

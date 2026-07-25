@@ -6,10 +6,10 @@
     <title>Join - Chamber of Commerce Membership Application</title>
     <meta name="description" content="Apply to join the Chamber of Commerce membership program and grow your business today.">
     <meta name="author" content="Jeimi Díaz Mariani">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/icon11.webp">
     <meta property="og:title" content="Join Chamber of Commerce Membership">
     <meta property="og:description" content="Apply to join the Chamber of Commerce membership program and grow your business today.">
-    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/building1.webp">
+    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/chamber/images/share-image.webp">
     <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/chamber/join.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,94 +19,100 @@
     <script src="scripts/chamber.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-box">
-            <span class="site-title">Chamber of Commerce</span>
+    <header class="site-header">
+        <div class="header-side-block"></div>
+        <div class="header-center">
+            <div class="header-box">
+                <span class="site-title">Chamber of Commerce</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
+        <div class="header-side-block"></div>
     </header>
 
-    <main class="join-main">
-        <h1>Membership Application</h1>
-        <div class="join-container">
-            <form method="get" action="thankyou.html" class="join-form">
-                <label>First Name * <input type="text" name="fname" title="First Name" autocomplete="given-name" required></label>
-                <label>Last Name * <input type="text" name="lname" title="Last Name" autocomplete="family-name" required></label>
-                <label>Organizational Title <input type="text" name="title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}"></label>
-                <label>Email * <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required></label>
-                <label>Mobile Phone * <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required></label>
-                <label>Business Name * <input type="text" name="organization" title="Business Name" autocomplete="organization" required></label>
-                
-                <label>Membership Level
-                    <select name="membership" required>
-                        <option value="" disabled selected>Select a membership level</option>
-                        <option value="np">NP Membership (Non Profit - No Fee)</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
-                </label>
+    <main class="page-background">
+        <div class="join-main">
+            <h1>Membership Application</h1>
+            <div class="join-container">
+                <form method="get" action="thankyou.html" class="join-form">
+                    <label>First Name * <input type="text" name="fname" title="First Name" autocomplete="given-name" required></label>
+                    <label>Last Name * <input type="text" name="lname" title="Last Name" autocomplete="family-name" required></label>
+                    <label>Organizational Title <input type="text" name="title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}"></label>
+                    <label>Email * <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required></label>
+                    <label>Mobile Phone * <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required></label>
+                    <label>Business Name * <input type="text" name="organization" title="Business Name" autocomplete="organization" required></label>
+                    
+                    <label>Membership Level
+                        <select name="membership" required>
+                            <option value="" disabled selected>Select a membership level</option>
+                            <option value="np">NP Membership (Non Profit - No Fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
 
-                <label>Business Description <textarea name="description" title="Business Description"></textarea></label>
-                
-                <input type="hidden" id="timestamp" name="timestamp">
+                    <label>Business Description <textarea name="description" title="Business Description"></textarea></label>
+                    
+                    <input type="hidden" id="timestamp" name="timestamp">
 
-                <input type="submit" value="Join the Chamber" class="submit-btn">
-            </form>
+                    <input type="submit" value="Join the Chamber" class="submit-btn">
+                </form>
 
-            <section class="cards-container">
-                <div class="membership-card">
-                    <h3>NP Membership</h3>
-                    <button type="button" id="np-btn">View Benefits</button>
-                </div>
-                <div class="membership-card">
-                    <h3>Bronze Membership</h3>
-                    <button type="button" id="bronze-btn">View Benefits</button>
-                </div>
-                <div class="membership-card">
-                    <h3>Silver Membership</h3>
-                    <button type="button" id="silver-btn">View Benefits</button>
-                </div>
-                <div class="membership-card">
-                    <h3>Gold Membership</h3>
-                    <button type="button" id="gold-btn">View Benefits</button>
-                </div>
-            </section>
+                <section class="cards-container">
+                    <div class="membership-card np-card">
+                        <h3>NP Membership</h3>
+                        <button type="button" id="np-btn">View Benefits</button>
+                    </div>
+                    <div class="membership-card bronze-card">
+                        <h3>Bronze Membership</h3>
+                        <button type="button" id="bronze-btn">View Benefits</button>
+                    </div>
+                    <div class="membership-card silver-card">
+                        <h3>Silver Membership</h3>
+                        <button type="button" id="silver-btn">View Benefits</button>
+                    </div>
+                    <div class="membership-card gold-card">
+                        <h3>Gold Membership</h3>
+                        <button type="button" id="gold-btn">View Benefits</button>
+                    </div>
+                </section>
+            </div>
+
+            <dialog id="np-modal">
+                <h3>NP Membership Benefits</h3>
+                <p>For non-profit organizations. No membership fee required. Access to basic chamber meetings and community events.</p>
+                <button id="close-np">Close</button>
+            </dialog>
+
+            <dialog id="bronze-modal">
+                <h3>Bronze Membership Benefits</h3>
+                <p>Includes basic advertising in the chamber directory, newsletter mentions, and standard event discounts.</p>
+                <button id="close-bronze">Close</button>
+            </dialog>
+
+            <dialog id="silver-modal">
+                <h3>Silver Membership Benefits</h3>
+                <p>Includes spotlight positions on the home page, advanced training sessions, and reduced rates for major events.</p>
+                <button id="close-silver">Close</button>
+            </dialog>
+
+            <dialog id="gold-modal">
+                <h3>Gold Membership Benefits</h3>
+                <p>Maximum visibility with top spotlight positioning, VIP event access, free training workshops, and premium sponsorships.</p>
+                <button id="close-gold">Close</button>
+            </dialog>
         </div>
-
-        <dialog id="np-modal">
-            <h3>NP Membership Benefits</h3>
-            <p>For non-profit organizations. No membership fee required. Access to basic chamber meetings and community events.</p>
-            <button id="close-np">Close</button>
-        </dialog>
-
-        <dialog id="bronze-modal">
-            <h3>Bronze Membership Benefits</h3>
-            <p>Includes basic advertising in the chamber directory, newsletter mentions, and standard event discounts.</p>
-            <button id="close-bronze">Close</button>
-        </dialog>
-
-        <dialog id="silver-modal">
-            <h3>Silver Membership Benefits</h3>
-            <p>Includes spotlight positions on the home page, advanced training sessions, and reduced rates for major events.</p>
-            <button id="close-silver">Close</button>
-        </dialog>
-
-        <dialog id="gold-modal">
-            <h3>Gold Membership Benefits</h3>
-            <p>Maximum visibility with top spotlight positioning, VIP event access, free training workshops, and premium sponsorships.</p>
-            <button id="close-gold">Close</button>
-        </dialog>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Chamber of Commerce by Jeimi Diaz Mariani</p>
     </footer>
 </body>
