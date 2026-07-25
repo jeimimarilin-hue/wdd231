@@ -1,0 +1,12 @@
+{
+  "components": [
+    { "name": "Resistor", "category": "Passive", "function": "Limits current flow.", "symbol": "R" },
+    { "name": "Capacitor", "category": "Passive", "function": "Stores energy in electric field.", "symbol": "C" },
+    { "name": "Inductor", "category": "Passive", "function": "Stores energy in magnetic field.", "symbol": "L" },
+    { "name": "Potentiometer", "category": "Passive", "function": "Variable resistor for voltage control.", "symbol": "RV" },
+    { "name": "Transistor (BJT)", "category": "Active", "function": "Current-controlled switch or amplifier.", "symbol": "Q" },
+    { "name": "Diode (LED)", "category": "Active", "function": "Emits light when current flows.", "symbol": "D" },
+    { "name": "Operational Amplifier", "category": "Active", "function": "High-gain voltage amplifier.", "symbol": "U" },
+    { "name": "Microcontroller", "category": "Active", "function": "Programmable logic and control unit.", "symbol": "IC" }
+  ]
+}
