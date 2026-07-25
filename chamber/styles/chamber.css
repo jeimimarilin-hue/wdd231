@@ -136,16 +136,14 @@ body {
     animation: fadeInSlide 1s ease-out forwards;
 }
 
-/* --- CORRECCIÓN DE ACCESIBILIDAD APLICADA AQUÍ --- */
 .np-card {
-    background-color: #e0e0e0; /* Fondo original */
+    background-color: #e0e0e0;
     border-left: 5px solid #757575;
 }
 
 .np-card h2 {
-    color: #000000; /* Color de texto cambiado a negro para contraste */
+    color: #000000;
 }
-/* --- FIN DE LA CORRECCIÓN --- */
 
 .bronze-card {
     background-color: #f5deb3;
