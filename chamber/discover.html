@@ -4,24 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover - Cabimas Chamber of Commerce</title>
-    <meta name="description" content="Discover points of interest, demographics, and local features of Cabimas.">
+    <meta name="description" content="Discover points of interest, demographics, and local features of Cabimas chamber of commerce.">
     <meta name="author" content="Jeimi Díaz Mariani">
+
+    <meta property="og:title" content="Discover Cabimas - Chamber of Commerce">
+    <meta property="og:description" content="Explore points of interest, local culture, and demographics in Cabimas.">
+    <meta property="og:image" content="https://jeimimarilin.github.io/wdd231/chamber/images/place1.webp">
+    <meta property="og:url" content="https://jeimimarilin.github.io/wdd231/chamber/discover.html">
+
+    <link rel="icon" href="images/icon10.webp">
+
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="stylesheet" href="styles/discover.css">
-    <script type="module" src="scripts/discover.js" defer></script>
+
+    <script type="module" src="scripts/discover.js"></script>
 </head>
 <body>
     <header>
+        <span class="logo-title">Cabimas Chamber</span>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="discover-container">
         <h1>Discover Cabimas</h1>
-        <p style="text-align: center; font-size: 0.9rem; color: #4a3c44; margin-bottom: 15px;">By Jeimi Díaz Mariani</p>
+        <p class="author-credit">By Jeimi Díaz Mariani</p>
         <div id="visit-message"></div>
         <div class="discover-grid"></div>
     </main>
 
     <footer>
+        <p>&copy; 2026 Cabimas Chamber of Commerce | Jeimi Díaz Mariani | WDD 231</p>
     </footer>
 </body>
 </html>
