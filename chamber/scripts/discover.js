@@ -1,10 +1,18 @@
-import { discoverItems } from '../data/discover.mjs';
-
 const gridContainer = document.querySelector(".discover-grid");
 
-function displayItems() {
+async function getDiscoverItems() {
+    try {
+        const response = await fetch("data/discover.json");
+        const data = await response.json();
+        displayItems(data.discoverItems);
+    } catch (error) {
+        console.error("Error loading discover data:", error);
+    }
+}
+
+function displayItems(items) {
     gridContainer.innerHTML = "";
-    discoverItems.forEach((item, index) => {
+    items.forEach((item, index) => {
         const section = document.createElement("section");
         section.classList.add(`card-${index + 1}`);
 
@@ -24,7 +32,7 @@ function displayItems() {
         address.textContent = item.address;
 
         const p = document.createElement("p");
-        p.textContent = item.description;
+        p.textContent = item.description || item.cultural;
 
         const button = document.createElement("button");
         button.textContent = "Learn More";
@@ -39,7 +47,7 @@ function displayItems() {
     });
 }
 
-displayItems();
+getDiscoverItems();
 
 const visitMessage = document.querySelector("#visit-message");
 const lastVisit = localStorage.getItem("lastVisit-ls");
