@@ -12,6 +12,13 @@
     font-weight: 700;
 }
 
+.author-credit {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a3c44;
+    margin-bottom: 15px;
+}
+
 #visit-message {
     background: #e0f4f7;
     color: #1a364d;
