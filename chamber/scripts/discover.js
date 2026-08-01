@@ -1,4 +1,4 @@
-import { discoverItems } from "../data/discover.mjs";
+import { discoverItems } from '../data/discover.mjs';
 
 const gridContainer = document.querySelector(".discover-grid");
 
