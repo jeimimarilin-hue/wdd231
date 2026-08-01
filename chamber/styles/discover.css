@@ -4,14 +4,20 @@
     padding: 20px;
 }
 
+.discover-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 #visit-message {
     background: #e3f2fd;
     color: #0d47a1;
     padding: 15px;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 20px;
-    border-radius: 4px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .discover-grid {
@@ -33,10 +39,11 @@
 .discover-grid h2 {
     font-size: 1.2rem;
     margin-top: 0;
+    color: #333;
 }
 
 .discover-grid figure {
-    margin: 0;
+    margin: 0 0 10px 0;
     overflow: hidden;
     border-radius: 4px;
 }
@@ -46,18 +53,21 @@
     height: auto;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+    display: block;
 }
 
 .discover-grid address {
     font-style: normal;
     font-size: 0.9rem;
     color: #666;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 .discover-grid p {
     font-size: 0.95rem;
+    color: #444;
     flex-grow: 1;
+    line-height: 1.4;
 }
 
 .discover-grid button {
@@ -68,6 +78,8 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.2s ease;
 }
 
 .discover-grid button:hover {
@@ -99,9 +111,11 @@
             "card7 card8";
     }
     
-    .discover-grid img:hover {
-        transform: scale(1.05);
+    .discover-grid figure img {
         transition: transform 0.3s ease;
+    }
+    .discover-grid section:hover img {
+        transform: scale(1.05);
     }
 }
 
@@ -113,9 +127,12 @@
             "card5 card6 card7 card8";
     }
     
-    .discover-grid img:hover {
-        filter: brightness(1.1) contrast(1.1);
-        transition: filter 0.3s ease;
+    .discover-grid figure img {
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .discover-grid section:hover img {
+        filter: brightness(1.1) contrast(1.05);
+        transform: scale(1.03);
     }
 }
 
