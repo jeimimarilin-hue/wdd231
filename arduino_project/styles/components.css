@@ -1,26 +1,3 @@
-.main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    flex-grow: 1;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-h1 {
-    text-align: center;
-    color: var(--accent-pink);
-    font-size: 2.4rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft);
-    letter-spacing: 1px;
-}
-
 h2 {
     color: var(--accent-pink);
     background-color: var(--card-bg);
@@ -119,6 +96,13 @@ dialog {
 dialog::backdrop {
     background-color: rgba(74, 20, 140, 0.4);
     backdrop-filter: blur(5px);
+}
+
+#component-dialog {
+    max-width: 90vw;
+    width: 400px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #modal-content {
