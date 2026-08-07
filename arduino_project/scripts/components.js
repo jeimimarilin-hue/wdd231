@@ -45,27 +45,37 @@ function renderGrid(items, container) {
 }
 
 function showModal(comp) {
-    let modal = document.getElementById('component-modal');
+    const modal = document.getElementById('component-dialog');
     
-    if (!modal) {
-        modal = document.createElement('dialog');
-        modal.id = 'component-modal';
-        modal.innerHTML = `
-            <div id="modal-content">
-                <img id="modal-img" src="" alt="">
-                <h3 id="modal-title"></h3>
-                <p><strong>Symbol:</strong> <span id="modal-symbol"></span></p>
-                <p><strong>Category:</strong> <span id="modal-category"></span></p>
-                <p><strong>Function:</strong> <span id="modal-function"></span></p>
-                <button id="close-modal">Close</button>
-            </div>
-        `;
-        document.body.appendChild(modal);
+    if (!modal) return;
 
-        document.getElementById('close-modal').addEventListener('click', () => {
+    const modalContent = document.getElementById('modal-content');
+    if (modalContent) {
+        modalContent.innerHTML = `
+            <img id="modal-img" src="${comp.image}" alt="${comp.name}">
+            <h3 id="modal-title">${comp.name}</h3>
+            <p><strong>Symbol:</strong> <span id="modal-symbol">${comp.symbol}</span></p>
+            <p><strong>Category:</strong> <span id="modal-category">${comp.category}</span></p>
+            <p><strong>Function:</strong> <span id="modal-function">${comp.function}</span></p>
+        `;
+    }
+
+    modal.showModal();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadComponents();
+
+    const modal = document.getElementById('component-dialog');
+    const closeBtn = document.getElementById('close-modal');
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
             modal.close();
         });
+    }
 
+    if (modal) {
         modal.addEventListener('click', (event) => {
             const rect = modal.getBoundingClientRect();
             if (event.clientX < rect.left || event.clientX > rect.right ||
@@ -74,17 +84,4 @@ function showModal(comp) {
             }
         });
     }
-
-    document.getElementById('modal-img').src = comp.image;
-    document.getElementById('modal-img').alt = comp.name;
-    document.getElementById('modal-title').textContent = comp.name;
-    document.getElementById('modal-symbol').textContent = comp.symbol;
-    document.getElementById('modal-category').textContent = comp.category;
-    document.getElementById('modal-function').textContent = comp.function;
-
-    modal.showModal();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadComponents();
 });
