@@ -145,6 +145,17 @@ h2 {
     box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
 }
 
+#component-dialog {
+    max-width: 90vw;
+    width: 400px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#modal-content {
+    word-wrap: break-word;
+}
+
 .component-card img {
     width: 110px;
     height: 110px;
@@ -341,4 +352,15 @@ footer {
     .grid-container {
         grid-template-columns: 1fr;
     }
+}
+
+#component-dialog {
+    max-width: 90vw;
+    width: 400px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#modal-content {
+    word-wrap: break-word;
 }
