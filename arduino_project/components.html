@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arduino Component Guide - Catalog</title>
-    <meta name="description" content="Browse active and passive components in our Arduino Component Guide catalog.">
-    <meta name="author" content="Jeimi Díaz Mariani">
-    <meta property="og:title" content="Arduino Component Guide - Catalog">
-    <meta property="og:description" content="Browse active and passive components in our Arduino Component Guide catalog.">
-    <meta property="og:image" content="https://jeimimarilin.github.io/images/resistor_icon.webp">
-    <meta property="og:url" content="https://jeimimarilin.github.io/components.html">
+    <title>Electronic Components Guide - Components</title>
     <link rel="icon" href="images/resistor_icon.webp" type="image/webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
+    <meta property="og:url" content="https://jeimimarilin.github.io/components.html">
+    <meta property="og:image" content="https://jeimimarilin.github.io/images/resistor_icon.webp">
     <link rel="stylesheet" href="styles/light_mode.css">
-    <script type="module" src="scripts/components.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo-title">Arduino Component Guide</div>
+        <div class="logo-title">Electronic Guide</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -30,19 +21,24 @@
             </ul>
         </nav>
     </header>
-
     <main class="main-container">
         <h1>Components Catalog</h1>
-        
-        <h2>Active Components</h2>
-        <div class="grid-container" id="active-grid"></div>
-
-        <h2>Passive Components</h2>
-        <div class="grid-container" id="passive-grid"></div>
+        <section>
+            <h2>Active Components</h2>
+            <div class="grid-container" id="active-grid"></div>
+        </section>
+        <section>
+            <h2>Passive Components</h2>
+            <div class="grid-container" id="passive-grid"></div>
+        </section>
     </main>
-
+    <dialog id="component-dialog">
+        <div id="modal-content"></div>
+        <button id="close-modal">Close</button>
+    </dialog>
     <footer>
-        <p>&copy; 2026 Electronic Components Guide | Designed by Jeimi Díaz Mariani</p>
+        <p>&copy; 2026 Electronic Components Guide. All rights reserved.</p>
     </footer>
+    <script src="scripts/components.js"></script>
 </body>
 </html>

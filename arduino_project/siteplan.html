@@ -6,45 +6,38 @@
     <title>Site Plan - Electronic Components Guide</title>
     <meta name="description" content="Site plan for the Electronic Components and Arduino Guide project.">
     <meta name="author" content="Jeimi Díaz Mariani">
+    
     <meta property="og:title" content="Site Plan - Electronic Components Guide">
     <meta property="og:description" content="Site plan for the Electronic Components and Arduino Guide project.">
-    <meta property="og:image" content="https://jeimimarilin.github.io/images/resistor_icon.webp">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://jeimimarilin.github.io/siteplan.html">
+    <meta property="og:image" content="https://jeimimarilin.github.io/images/resistor_icon.webp">
     <link rel="icon" href="images/resistor_icon.webp" type="image/webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/light_mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/siteplan.css">
 </head>
 <body>
     <header>
-        <div class="logo-title">Arduino Component Guide</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="components.html">Components</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="siteplan.html" class="active">Site Plan</a></li>
-            </ul>
-        </nav>
+        <h1>Electronic Components Guide - Site Plan</h1>
+        <p>By Jeimi Díaz Mariani</p>
     </header>
 
-    <main class="main-container">
-        <h1>Site Plan - Electronic Components Guide</h1>
-
-        <section class="component-card" style="cursor: default; transform: none; margin-bottom: 20px;">
+    <main>
+        <section>
             <h2>1. Site Name</h2>
             <p><strong>Name:</strong> Electronic Components & Arduino Guide</p>
-            <p><strong>Reason:</strong> This name clearly identifies the platform as an educational reference guide for hobbyists, students, and makers working with hardware components and microcontrollers. Inspired by prototyping platforms like <a href="https://wokwi.com/" target="_blank" style="color: var(--accent-pink);">Wokwi</a>.</p>
+            <p><strong>Reason:</strong> This name clearly identifies the platform as an educational reference guide for hobbyists, students, and makers working with hardware components and microcontrollers. Inspired by prototyping platforms like <a href="https://wokwi.com/" target="_blank" style="color: #ff80ab;">Wokwi</a>.</p>
         </section>
 
-        <section class="component-card" style="cursor: default; transform: none; margin-bottom: 20px;">
+        <section>
             <h2>2. Site Purpose</h2>
             <p>The site provides a structured visual catalog and reference guide for electronic components, separating them into active and passive categories with specifications and use cases to help students and developers in their hardware projects.</p>
         </section>
 
-        <section class="component-card" style="cursor: default; transform: none; margin-bottom: 20px;">
+        <section>
             <h2>3. Scenarios</h2>
             <ul>
                 <li>What is the difference between active and passive electronic components?</li>
@@ -52,48 +45,48 @@
             </ul>
         </section>
 
-        <section class="component-card" style="cursor: default; transform: none; margin-bottom: 20px;">
+        <section>
             <h2>4. Color Scheme</h2>
-            <p>The theme color palette provides a technical and modern aesthetic suitable for developer and electronics platforms:</p>
+            <p>The dark theme color palette provides a technical and modern aesthetic suitable for developer and electronics platforms:</p>
             <ul>
-                <li><strong>Background:</strong> Used as the main body background with custom variables.</li>
-                <li><strong>Text Color:</strong> Used for general paragraph readability.</li>
-                <li><strong>Accent Pink:</strong> Used for headings and section highlights.</li>
+                <li><strong>Background (#0f050c):</strong> Used as the main body background with custom image.</li>
+                <li><strong>Text Color (#fce4ec):</strong> Used for general paragraph readability.</li>
+                <li><strong>Accent Pink (#ff4081):</strong> Used for headings and section highlights.</li>
             </ul>
         </section>
 
-        <section class="component-card" style="cursor: default; transform: none; margin-bottom: 20px;">
+        <section>
             <h2>5. Typography</h2>
             <p><strong>Font Family:</strong> 'Montserrat', sans-serif</p>
             <p><strong>Application:</strong> Applied across the entire site body, headings, and descriptions to maintain a clean, professional, and contemporary look on both mobile and desktop screens.</p>
         </section>
 
-        <section class="component-card" style="cursor: default; transform: none;">
+        <section>
             <h2>6. Wireframe</h2>
             <p><strong>Mobile View:</strong> Single-column stacked layout displaying a centered header title, followed by vertical sections for passive components and active components grid.</p>
             <p><strong>Desktop View:</strong> Expanded multi-column grid layout allowing component cards to adjust automatically side-by-side depending on screen width.</p>
             
-            <div class="wireframe-container" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
-                <div class="wireframe-box" style="flex: 1; min-width: 250px;">
+            <div class="wireframe-container">
+                <div class="wireframe-box">
                     <h3>Mobile Wireframe</h3>
-                    <div class="wireframe-mockup mobile-mockup" style="border: 1px dashed var(--border-color); padding: 10px; border-radius: 6px;">
-                        <div class="wf-header" style="background: var(--img-bg); padding: 5px; margin-bottom: 5px; text-align: center;">Header</div>
-                        <div class="wf-nav" style="background: var(--img-bg); padding: 5px; margin-bottom: 5px; text-align: center;">Menu</div>
-                        <div class="wf-content" style="background: var(--img-bg); padding: 5px; margin-bottom: 5px; text-align: center;">Card 1</div>
-                        <div class="wf-content" style="background: var(--img-bg); padding: 5px; margin-bottom: 5px; text-align: center;">Card 2</div>
-                        <div class="wf-footer" style="background: var(--img-bg); padding: 5px; text-align: center;">Footer</div>
+                    <div class="wireframe-mockup mobile-mockup">
+                        <div class="wf-header">Header</div>
+                        <div class="wf-nav">Menu</div>
+                        <div class="wf-content">Card 1</div>
+                        <div class="wf-content">Card 2</div>
+                        <div class="wf-footer">Footer</div>
                     </div>
                 </div>
-                <div class="wireframe-box" style="flex: 1; min-width: 250px;">
+                <div class="wireframe-box">
                     <h3>Desktop Wireframe</h3>
-                    <div class="wireframe-mockup desktop-mockup" style="border: 1px dashed var(--border-color); padding: 10px; border-radius: 6px;">
-                        <div class="wf-header" style="background: var(--img-bg); padding: 5px; margin-bottom: 5px; text-align: center;">Header & Navigation</div>
-                        <div class="wf-grid-container" style="display: flex; gap: 5px; margin-bottom: 5px;">
-                            <div class="wf-content" style="background: var(--img-bg); padding: 10px; flex: 1; text-align: center;">Card 1</div>
-                            <div class="wf-content" style="background: var(--img-bg); padding: 10px; flex: 1; text-align: center;">Card 2</div>
-                            <div class="wf-content" style="background: var(--img-bg); padding: 10px; flex: 1; text-align: center;">Card 3</div>
+                    <div class="wireframe-mockup desktop-mockup">
+                        <div class="wf-header">Header & Navigation</div>
+                        <div class="wf-grid-container">
+                            <div class="wf-content">Card 1</div>
+                            <div class="wf-content">Card 2</div>
+                            <div class="wf-content">Card 3</div>
                         </div>
-                        <div class="wf-footer" style="background: var(--img-bg); padding: 5px; text-align: center;">Footer</div>
+                        <div class="wf-footer">Footer</div>
                     </div>
                 </div>
             </div>
@@ -101,7 +94,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Electronic Components Guide | Designed by Jeimi Díaz Mariani</p>
+        <p>&copy; 2026 Electronic Components Guide | Jeimi Díaz Mariani</p>
     </footer>
 </body>
 </html>
