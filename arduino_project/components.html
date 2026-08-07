@@ -6,20 +6,16 @@
     <title>Arduino Component Guide - Catalog</title>
     <meta name="description" content="Browse active and passive components in our Arduino Component Guide catalog.">
     <meta name="author" content="Jeimi Díaz Mariani">
-
     <meta property="og:title" content="Arduino Component Guide - Catalog">
     <meta property="og:description" content="Browse active and passive components in our Arduino Component Guide catalog.">
     <meta property="og:image" content="https://www.example.com/images/resistor_icon.webp">
     <meta property="og:url" content="https://www.example.com/components.html">
-
     <link rel="icon" href="images/resistor_icon.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/normalize.css">
-
+    <link rel="stylesheet" href="styles/light_mode.css">
+    <link rel="stylesheet" href="styles/dark_mode.css">
     <script type="module" src="scripts/components.js"></script>
 </head>
 <body>
@@ -31,6 +27,7 @@
                 <li><a href="components.html" class="active">Components</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="siteplan.html">Site Plan</a></li>
+                <li><button id="theme-toggle" class="theme-toggle-btn">🌓 Theme</button></li>
             </ul>
         </nav>
     </header>
@@ -48,5 +45,20 @@
     <footer>
         <p>&copy; 2026 Electronic Components Guide | Designed by Jeimi Díaz Mariani</p>
     </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
