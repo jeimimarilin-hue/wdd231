@@ -27,8 +27,7 @@ h2 {
     border: 1px solid var(--border-color);
     padding: 14px 24px;
     border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin: 30px 0 20px 0;
     font-size: 1.5rem;
     display: inline-block;
     box-shadow: 0 4px 15px rgba(216, 27, 96, 0.05);
@@ -161,7 +160,7 @@ dialog::backdrop {
 
 #close-modal {
     background-color: var(--accent-pink);
-    color: #ffffff;
+    color: var(--card-bg);
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
