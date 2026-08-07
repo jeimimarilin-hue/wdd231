@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Components Guide - Projects</title>
+    <meta name="description" content="Submit your Arduino project details and view your submissions.">
+    <meta name="author" content="Jeimi Díaz Mariani">
+    <link rel="icon" href="images/resistor_icon.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title">Arduino Component Guide</div>
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle">🌓 Theme</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Arduino Projects Submission</h1>
+        
+        <div id="results-container" class="component-card" style="margin-bottom: 30px; display: none; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h2>Submission Details</h2>
+            <p><strong>Project Name:</strong> <span id="res-title"></span></p>
+            <p><strong>Main Component:</strong> <span id="res-component"></span></p>
+            <p><strong>Description:</strong> <span id="res-desc"></span></p>
+        </div>
+
+        <form method="get" class="component-card" style="max-width: 600px; margin: 0 auto; gap: 15px;">
+            <h2>Register a New Project</h2>
+            <label for="project-title">Project Title:</label>
+            <input type="text" id="project-title" name="title" required style="padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            
+            <label for="main-component">Primary Component Used:</label>
+            <input type="text" id="main-component" name="component" required style="padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            
+            <label for="project-desc">Description:</label>
+            <textarea id="project-desc" name="description" rows="3" required style="padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);"></textarea>
+            
+            <button type="submit" style="background-color: var(--accent-pink); color: #fff; border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px;">Submit Project</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Electronic Components Guide | Designed by Jeimi Díaz Mariani</p>
+    </footer>
+
+    <script type="module">
+        import { initTheme } from './scripts/components.js';
+        initTheme();
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('title')) {
+            document.getElementById('res-title').textContent = params.get('title');
+            document.getElementById('res-component').textContent = params.get('component');
+            document.getElementById('res-desc').textContent = params.get('description');
+            document.getElementById('results-container').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

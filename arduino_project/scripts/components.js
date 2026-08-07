@@ -1,91 +1,112 @@
-const url = "data/components.json";
-const passiveGrid = document.querySelector("#passive-grid");
-const activeGrid = document.querySelector("#active-grid");
-const themeToggleBtn = document.querySelector("#theme-toggle");
-const modal = document.querySelector("#component-modal");
-const modalImg = document.querySelector("#modal-img");
-const modalTitle = document.querySelector("#modal-title");
-const modalSymbol = document.querySelector("#modal-symbol");
-const modalFunction = document.querySelector("#modal-function");
-const modalCategory = document.querySelector("#modal-category");
-const closeModalBtn = document.querySelector("#close-modal");
+export function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-const currentTheme = localStorage.getItem("theme");
-if (currentTheme === "light") {
-    document.body.classList.add("light-mode");
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            let currentTheme = 'dark';
+            if (body.classList.contains('light-mode')) {
+                currentTheme = 'light';
+            }
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
 }
 
-themeToggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    let theme = "dark";
-    if (document.body.classList.contains("light-mode")) {
-        theme = "light";
-    }
-    localStorage.setItem("theme", theme);
-});
+async function loadComponents() {
+    const activeGrid = document.getElementById('active-grid');
+    const passiveGrid = document.getElementById('passive-grid');
+    
+    if (!activeGrid || !passiveGrid) return;
 
-async function getComponents() {
     try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const response = await fetch('data/components.json');
+        if (!response.ok) throw new Error('Could not load JSON file');
+        
         const data = await response.json();
-        displayComponents(data.components);
+        const components = data.components;
+
+        activeGrid.innerHTML = '';
+        passiveGrid.innerHTML = '';
+
+        const activeComponents = components.filter(comp => comp.category.toLowerCase().includes('active'));
+        const passiveComponents = components.filter(comp => comp.category.toLowerCase().includes('passive'));
+
+        renderGrid(activeComponents, activeGrid);
+        renderGrid(passiveComponents, passiveGrid);
+
     } catch (error) {
-        console.error("Error fetching components data:", error);
-        passiveGrid.innerHTML = "<p>Sorry, unable to load components at this time.</p>";
+        console.error('Error fetching components:', error);
     }
 }
 
-function displayComponents(components) {
-    passiveGrid.innerHTML = "";
-    activeGrid.innerHTML = "";
-
-    components.forEach(c => {
-        const section = document.createElement("section");
-        section.classList.add("component-card");
-        
-        section.innerHTML = `
-            <img src="${c.image}" alt="${c.name}" loading="lazy">
-            <h3>${c.name}</h3>
-            <p><strong>Symbol:</strong> ${c.symbol}</p>
-            <p><strong>Function:</strong> ${c.function}</p>
-            <p><strong>Category:</strong> ${c.category}</p>
+function renderGrid(items, container) {
+    items.forEach(comp => {
+        const card = document.createElement('div');
+        card.className = 'component-card';
+        card.innerHTML = `
+            <img src="${comp.image}" alt="${comp.name}" loading="lazy">
+            <h3>${comp.name}</h3>
+            <p><strong>Symbol:</strong> ${comp.symbol}</p>
+            <p><strong>Category:</strong> ${comp.category}</p>
         `;
 
-        section.addEventListener("click", () => {
-            modalImg.src = c.image;
-            modalImg.alt = c.name;
-            modalTitle.textContent = c.name;
-            modalSymbol.innerHTML = `<strong>Symbol:</strong> ${c.symbol}`;
-            modalFunction.innerHTML = `<strong>Function:</strong> ${c.function}`;
-            modalCategory.innerHTML = `<strong>Category:</strong> ${c.category}`;
-            modal.showModal();
+        card.addEventListener('click', () => {
+            showModal(comp);
         });
 
-        if (c.category.toLowerCase() === "passive") {
-            passiveGrid.appendChild(section);
-        } else {
-            activeGrid.appendChild(section);
-        }
+        container.appendChild(card);
     });
 }
 
-closeModalBtn.addEventListener("click", () => {
-    modal.close();
-});
+function showModal(comp) {
+    let modal = document.getElementById('component-modal');
+    
+    if (!modal) {
+        modal = document.createElement('dialog');
+        modal.id = 'component-modal';
+        modal.innerHTML = `
+            <div id="modal-content">
+                <img id="modal-img" src="" alt="">
+                <h3 id="modal-title"></h3>
+                <p><strong>Symbol:</strong> <span id="modal-symbol"></span></p>
+                <p><strong>Category:</strong> <span id="modal-category"></span></p>
+                <p><strong>Function:</strong> <span id="modal-function"></span></p>
+                <button id="close-modal">Close</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
 
-modal.addEventListener("click", (event) => {
-    const rect = modal.getBoundingClientRect();
-    if (
-        event.clientX < rect.left ||
-        event.clientX > rect.right ||
-        event.clientY < rect.top ||
-        event.clientY > rect.bottom
-    ) {
-        modal.close();
+        document.getElementById('close-modal').addEventListener('click', () => {
+            modal.close();
+        });
+
+        modal.addEventListener('click', (event) => {
+            const rect = modal.getBoundingClientRect();
+            if (event.clientX < rect.left || event.clientX > rect.right ||
+                event.clientY < rect.top || event.clientY > rect.bottom) {
+                modal.close();
+            }
+        });
     }
-});
 
-getComponents();
+    document.getElementById('modal-img').src = comp.image;
+    document.getElementById('modal-img').alt = comp.name;
+    document.getElementById('modal-title').textContent = comp.name;
+    document.getElementById('modal-symbol').textContent = comp.symbol;
+    document.getElementById('modal-category').textContent = comp.category;
+    document.getElementById('modal-function').textContent = comp.function;
+
+    modal.showModal();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    loadComponents();
+});
