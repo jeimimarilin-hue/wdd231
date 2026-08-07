@@ -1,24 +1,3 @@
-export function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            let currentTheme = 'dark';
-            if (body.classList.contains('light-mode')) {
-                currentTheme = 'light';
-            }
-            localStorage.setItem('theme', currentTheme);
-        });
-    }
-}
-
 async function loadComponents() {
     const activeGrid = document.getElementById('active-grid');
     const passiveGrid = document.getElementById('passive-grid');
@@ -107,6 +86,5 @@ function showModal(comp) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
     loadComponents();
 });

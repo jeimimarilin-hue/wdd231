@@ -15,16 +15,13 @@
 <body>
     <header>
         <div class="logo-title">Arduino Component Guide</div>
-        <div class="nav-right">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="components.html">Components</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle">🌓 Theme</button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-container">
@@ -37,7 +34,7 @@
             <p><strong>Description:</strong> <span id="res-desc"></span></p>
         </div>
 
-        <form method="get" class="component-card" style="max-width: 600px; margin: 0 auto; gap: 15px;">
+        <form method="get" class="component-card" style="max-width: 600px; margin: 0 auto; gap: 15px; display: flex; flex-direction: column;">
             <h2>Register a New Project</h2>
             <label for="project-title">Project Title:</label>
             <input type="text" id="project-title" name="title" required style="padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
@@ -56,16 +53,14 @@
         <p>&copy; 2026 Electronic Components Guide | Designed by Jeimi Díaz Mariani</p>
     </footer>
 
-    <script type="module">
-        import { initTheme } from './scripts/components.js';
-        initTheme();
-
+    <script>
         const params = new URLSearchParams(window.location.search);
         if (params.has('title')) {
             document.getElementById('res-title').textContent = params.get('title');
             document.getElementById('res-component').textContent = params.get('component');
             document.getElementById('res-desc').textContent = params.get('description');
             document.getElementById('results-container').style.display = 'flex';
+            document.getElementById('results-container').style.flexDirection = 'column';
         }
     </script>
 </body>
