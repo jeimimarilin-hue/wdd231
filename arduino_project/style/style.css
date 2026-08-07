@@ -5,6 +5,8 @@
     --accent-pink: #ff4081;
     --accent-hover: #ff80ab;
     --border-color: #4a1535;
+    --img-bg: #fce4ec;
+    --img-border: #ff80ab;
 }
 
 body.light-mode {
@@ -14,6 +16,8 @@ body.light-mode {
     --accent-pink: #d81b60;
     --accent-hover: #ad1457;
     --border-color: #f8bbd0;
+    --img-bg: #1a0a16;
+    --img-border: #d81b60;
 }
 
 body {
@@ -149,7 +153,11 @@ h2 {
     height: 100px;
     object-fit: contain;
     align-self: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--img-bg);
+    border-radius: 8px;
+    border: 1px solid var(--img-border);
 }
 
 .component-card h3 {
@@ -186,6 +194,10 @@ dialog::backdrop {
     object-fit: contain;
     display: block;
     margin: 0 auto 15px auto;
+    padding: 12px;
+    background-color: var(--img-bg);
+    border-radius: 8px;
+    border: 1px solid var(--img-border);
 }
 
 #modal-content h3 {

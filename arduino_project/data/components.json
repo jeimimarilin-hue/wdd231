@@ -4,91 +4,106 @@
       "name": "Resistor",
       "symbol": "R",
       "function": "Limits the flow of electrical current in a circuit.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/resistor1.png"
     },
     {
       "name": "Capacitor",
       "symbol": "C",
       "function": "Stores and releases electrical energy in an electric field.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/capacitor.png"
     },
     {
       "name": "Inductor",
       "symbol": "L",
       "function": "Stores energy in a magnetic field when electric current flows through it.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/inductor.png"
     },
     {
       "name": "Diode",
       "symbol": "D",
       "function": "Allows current to flow in one direction only.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/diode.png"
     },
     {
       "name": "Transistor",
       "symbol": "Q",
       "function": "Amplifies or switches electrical signals and power.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/transistor.png"
     },
     {
       "name": "LED",
       "symbol": "LED",
       "function": "Emits light when electric current passes through it.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/led.png"
     },
     {
       "name": "Potentiometer",
       "symbol": "RV",
       "function": "A three-terminal resistor with a sliding contact that acts as an adjustable voltage divider.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/potentiometer.png"
     },
     {
       "name": "Microcontroller",
       "symbol": "IC",
       "function": "A small computer on a single integrated circuit containing a processor, memory, and input/output peripherals.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/microcontroller.png"
     },
     {
       "name": "Push Button",
       "symbol": "S",
       "function": "A simple switch mechanism to control some aspect of a machine or a process.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/pushbutton.png"
     },
     {
       "name": "Buzzer",
       "symbol": "BZ",
       "function": "An audio signaling device that converts an electrical signal to sound.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/buzzer.png"
     },
     {
       "name": "Crystal Oscillator",
       "symbol": "X",
       "function": "Creates an electrical signal with a precise frequency using the mechanical resonance of a vibrating crystal.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/crystal.png"
     },
     {
       "name": "Relay",
       "symbol": "K",
       "function": "An electrically operated switch that uses an electromagnet to mechanically operate a switch.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/relay.png"
     },
     {
       "name": "Photoresistor",
       "symbol": "LDR",
       "function": "A light-controlled variable resistor whose resistance decreases with increasing incident light intensity.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/photoresistor.png"
     },
     {
       "name": "Voltage Regulator",
       "symbol": "VR",
       "function": "Designed to automatically maintain a constant voltage level.",
-      "category": "Active"
+      "category": "Active",
+      "image": "images/regulator.png"
     },
     {
       "name": "Thermistor",
       "symbol": "TH",
       "function": "A type of resistor whose resistance is significantly dependent on temperature.",
-      "category": "Passive"
+      "category": "Passive",
+      "image": "images/thermistor.png"
     }
   ]
 }
