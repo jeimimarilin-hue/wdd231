@@ -3,17 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronic Components Guide</title>
+    <title>Electronic Components Guide - Arduino Project</title>
+    <meta name="description" content="Explore passive and active electronic components used in Arduino projects, including symbols, functions, and specifications.">
+    <meta name="author" content="Jeimi Díaz Mariani">
+
+    <meta property="og:title" content="Electronic Components Guide">
+    <meta property="og:description" content="Explore components for Arduino projects.">
+    <meta property="og:image" content="https://jeimimarilin-hue.github.io/wdd231/arduino_project/images/resistor.webp">
+    <meta property="og:url" content="https://jeimimarilin-hue.github.io/wdd231/arduino_project/components.html">
+
+    <link rel="icon" href="images/resistor.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <script src="scripts/components.js" defer></script>
+    <script type="module" src="scripts/components.js" defer></script>
 </head>
 <body>
-    <main>
+    <header>
+        <span class="logo-title">Electronic Components & Arduino Guide</span>
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="components.html" class="active">Components</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle">🌓 Theme</button>
+        </div>
+    </header>
+
+    <main class="main-container">
         <h1>Electronic Components</h1>
-        <h2>Passive Components</h2>
-        <div id="passive-grid" class="grid-container"></div>
-        <h2>Active Components</h2>
-        <div id="active-grid" class="grid-container"></div>
+        
+        <section>
+            <h2>Passive Components</h2>
+            <div id="passive-grid" class="grid-container"></div>
+        </section>
+
+        <section>
+            <h2>Active Components</h2>
+            <div id="active-grid" class="grid-container"></div>
+        </section>
     </main>
+
+    <dialog id="component-modal">
+        <div id="modal-content">
+            <img id="modal-img" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-symbol"></p>
+            <p id="modal-function"></p>
+            <p id="modal-category"></p>
+            <button id="close-modal">Close</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>&copy; 2026 Arduino Project | Jeimi Díaz Mariani | <a href="https://wokwi.com/">Wokwi.com</a> | <a href="https://www.youtube.com/watch?v=RE5Wm66WpvA" target="_blank">Demo Video</a></p>
+    </footer>
 </body>
 </html>
